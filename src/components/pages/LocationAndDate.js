@@ -57,12 +57,12 @@ S.Map = styled.div`
   height: 18vh;
   border-radius: 1vh;
   border: 1px solid #bbbbbb;
+  transform: ${({ visible }) => visible ? 'translateY(0)' : 'translateY(10px)'};
+  transition: transform 0.5s linear 1s;
 `;
 S.Calendar = styled.div`
-  //width: 60vw;
-  //height: 15vh;
-  //border-radius: 1vh;
-  //border: 1px solid #bbbbbb;
+  transform: ${({ visible }) => visible ? 'translateY(0)' : 'translateY(10px)'};
+  transition: transform 0.5s linear 1s;
 `;
 
 function LocationAndDate({ pageNum, disableSwipe }) {
@@ -95,9 +95,15 @@ function LocationAndDate({ pageNum, disableSwipe }) {
       <S.MessageBox visible={visible}>
         <S.MessageTitle>오시는 곳</S.MessageTitle>
         <S.MessageLoc>고려대학교 교우회관</S.MessageLoc>
-        <S.Map id="map" ref={mapRef} onTouchStart={handleMapTouchStart} onTouchEnd={handleMapTouchEnd}></S.Map>
+        <S.Map
+          visible={visible}
+          id="map"
+          ref={mapRef}
+          onTouchStart={handleMapTouchStart}
+          onTouchEnd={handleMapTouchEnd}
+        />
         <S.MessageDate>2023년 3월 25일 토요일 낮 1시</S.MessageDate>
-        <S.Calendar>
+        <S.Calendar visible={visible}>
           <Calendar />
         </S.Calendar>
       </S.MessageBox>

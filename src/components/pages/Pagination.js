@@ -47,7 +47,7 @@ S.DotHighLight = styled.div`
 
 function Pagination({ pageNum, pages }) {
   return (
-    <S.Wrapper visible={pageNum !== 1}>
+    <S.Wrapper visible={pageNum > 1}>
       <S.DotsGroup>
       {
         pages.map(({ index, category }) => (

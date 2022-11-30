@@ -53,16 +53,28 @@ S.CoverSpot = styled.div`
   color: #F5E9DB;
   z-index: 2;
 `;
+S.MessageWrap = styled.div`
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: ${({ visible }) => visible ? 1 : 0};
+  transition: opacity 0.5s linear 1s;
+`;
 
 function Cover({ pageNum }) {
   const visible = pageNum === 1;
+  
   return (
-    <S.Wrapper visible={visible}>
+    <S.Wrapper visible={pageNum < 2}>
       <S.OverlayBlack />
-      <S.CoverName>승규,주연</S.CoverName>
-      <S.CoverMain>결혼합니다</S.CoverMain>
-      <S.CoverDate>2023년 3월 25일 토요일 낮 1시</S.CoverDate>
-      <S.CoverSpot>고려대학교 교우회관</S.CoverSpot>
+      <S.MessageWrap visible={visible}>
+        <S.CoverName>승규,주연</S.CoverName>
+        <S.CoverMain>결혼합니다</S.CoverMain>
+        <S.CoverDate>2023년 3월 25일 토요일 낮 1시</S.CoverDate>
+        <S.CoverSpot>고려대학교 교우회관</S.CoverSpot>
+      </S.MessageWrap>
     </S.Wrapper>
   );
 }

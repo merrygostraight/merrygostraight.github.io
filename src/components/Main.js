@@ -24,18 +24,10 @@ const pageList = [
 ];
 
 function Main() {
-  const [ pageNum, setPageNum ] = useState(1);
+  const [ pageNum, setPageNum ] = useState(0);
   
   useEffect(() => {
-    console.log('@@@ pageNum : ', pageNum);
-  }, [pageNum]);
-  
-  useEffect(() => {
-    console.log('@@ when mounted');
-  
-    return () => {
-      console.log('@@ when destroy');
-    };
+    setPageNum(1);
   }, []);
   
   return (
