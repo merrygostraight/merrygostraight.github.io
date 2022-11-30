@@ -33,24 +33,28 @@ S.MessageBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1vh;
-  padding-top: 18vh;
+  padding-top: 15vh;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
   color: #4d4d1a;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+`;
+S.MessageTitle = styled.div`
+  font-size: 1rem;
+  margin-bottom: 4px;
 `;
 S.MessageLoc = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 `;
 S.MessageDate = styled.div`
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 24px;
+  margin-bottom: 6px;
 `;
 S.Map = styled.div`
   width: 60vw;
   max-width: 400px;
-  height: 15vh;
+  height: 18vh;
   border-radius: 1vh;
   border: 1px solid #bbbbbb;
 `;
@@ -82,6 +86,7 @@ function LocationAndDate({ pageNum }) {
   return (
     <S.Wrapper visible={visible}>
       <S.MessageBox visible={visible}>
+        <S.MessageTitle>오시는 곳</S.MessageTitle>
         <S.MessageLoc>고려대학교 교우회관</S.MessageLoc>
         <S.Map id="map" ref={mapRef}></S.Map>
         <S.MessageDate>2023년 3월 25일 토요일 낮 1시</S.MessageDate>

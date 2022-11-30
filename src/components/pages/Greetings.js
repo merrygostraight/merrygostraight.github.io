@@ -35,7 +35,7 @@ S.MessageBox = styled.div`
 S.Message = styled.div`
   color: #AD5B78;
   //color: #ba8a87;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 
 function Greetings({ pageNum }) {
@@ -45,7 +45,7 @@ function Greetings({ pageNum }) {
     <S.Wrapper visible={visible}>
       <S.MessageBox visible={visible}>
         <S.Message>세상에,</S.Message>
-        <S.Message>둘이 같이 있으니 너무나 좋지 뭐에요!</S.Message>
+        <S.Message>둘이 함께 있으니 너무나 좋지 뭐에요!</S.Message>
         <S.Message>그래서 평생 함께 하기로 했답니다.</S.Message>
         <S.Message>오셔서 축하해 주세요!</S.Message>
       </S.MessageBox>
