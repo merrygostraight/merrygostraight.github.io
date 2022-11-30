@@ -65,7 +65,7 @@ S.Calendar = styled.div`
   //border: 1px solid #bbbbbb;
 `;
 
-function LocationAndDate({ pageNum }) {
+function LocationAndDate({ pageNum, disableSwipe }) {
   const visible = pageNum === 3;
   const mapRef = useRef();
   
@@ -83,12 +83,19 @@ function LocationAndDate({ pageNum }) {
     marker.setMap(map);
   }, []);
   
+  const handleMapTouchStart = () => {
+    disableSwipe(true);
+  };
+  const handleMapTouchEnd = () => {
+    disableSwipe(false);
+  };
+  
   return (
     <S.Wrapper visible={visible}>
       <S.MessageBox visible={visible}>
         <S.MessageTitle>오시는 곳</S.MessageTitle>
         <S.MessageLoc>고려대학교 교우회관</S.MessageLoc>
-        <S.Map id="map" ref={mapRef}></S.Map>
+        <S.Map id="map" ref={mapRef} onTouchStart={handleMapTouchStart} onTouchEnd={handleMapTouchEnd}></S.Map>
         <S.MessageDate>2023년 3월 25일 토요일 낮 1시</S.MessageDate>
         <S.Calendar>
           <Calendar />

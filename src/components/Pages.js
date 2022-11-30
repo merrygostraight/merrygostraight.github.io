@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Cover from 'components/pages/Cover';
 import Greetings from 'components/pages/Greetings';
@@ -6,13 +6,17 @@ import LocationAndDate from 'components/pages/LocationAndDate';
 import { useSwipeable } from 'react-swipeable';
 
 function Pages({ pageNum, setPageNum, lastPageNum }) {
+  const [swipeDisabled, setSwipeDisabled] = useState();
+
   const swipeHandlers = useSwipeable({
     onSwipedUp: () => {
+      if (swipeDisabled) return;
       if (pageNum < lastPageNum) {
         setPageNum(pageNum + 1);
       }
     },
     onSwipedDown: () => {
+      if (swipeDisabled) return;
       if (pageNum > 1) {
         setPageNum(pageNum - 1);
       }
@@ -27,7 +31,7 @@ function Pages({ pageNum, setPageNum, lastPageNum }) {
       <div {...swipeHandlers}>
         <Cover pageNum={pageNum} />
         <Greetings pageNum={pageNum} />
-        <LocationAndDate pageNum={pageNum} />
+        <LocationAndDate pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
       </div>
     );
 }
