@@ -15,7 +15,7 @@ S.Wrapper = styled.div`
   align-items: center;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transition: visibility 0.7s linear 0.5s, opacity 0.7s linear 0.5s;
+  transition: visibility 0.5s linear 0.3s, opacity 0.5s linear 0.3s;
 `;
 S.DotsGroup = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ S.Dots = styled.div`
   background-color: #aaaaaa;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 0.3 : 0};
-  transition: visibility 0.5s linear 0.8s, opacity 0.5s linear 0.8s;
+  transition: visibility 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
 `;
 S.DotHighLight = styled.div`
   width: 2vh;
@@ -43,7 +43,7 @@ S.DotHighLight = styled.div`
   background-color: #AD5B78;
   position: absolute;
   top: ${({ pageNum }) => 1+(pageNum-1)*4}vh;
-  transition: top 0.4s linear 0.7s, opacity 0.4s linear 0.7s;
+  transition: top 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
 `;
 
 function Pagination({ pageNum, pages }) {

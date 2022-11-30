@@ -19,7 +19,7 @@ S.Wrapper = styled.div`
   overflow: hidden;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transition: visibility 0.7s linear, opacity 0.7s linear;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
 `;
 S.OverlayBlack = styled.div`
   position: fixed;
@@ -28,7 +28,7 @@ S.OverlayBlack = styled.div`
   width: 100%;
   height: 100%;
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.5;
 `;
 S.CoverMain = styled.div`
   margin-top: 3vh;

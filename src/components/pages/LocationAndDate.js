@@ -23,7 +23,7 @@ S.Wrapper = styled.div`
   align-items: center;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transition: visibility 0.7s linear 0.7s, opacity 0.7s linear 0.7s;
+  transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
 S.MessageBox = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ S.MessageBox = styled.div`
   padding-top: 18vh;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transition: visibility 0.7s linear 1.4s, opacity 0.7s linear 1.4s;
+  transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
   color: #4d4d1a;
   font-size: 1.3rem;
 `;

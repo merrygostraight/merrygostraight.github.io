@@ -25,7 +25,7 @@ const pageList = [
 ];
 
 function Main() {
-  const [ pageNum, setPageNum ] = useState(3);
+  const [ pageNum, setPageNum ] = useState(1);
   const lastPageNum = 5;
   
   const { ref: documentRef } = useSwipeable({
