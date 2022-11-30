@@ -10,6 +10,7 @@ S.Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
   justify-content: flex-end;
   align-items: center;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
@@ -21,7 +22,7 @@ S.DotsGroup = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 4vh;
+  width: 1.3rem;
   height: 20vh;
   position: relative;
 `;

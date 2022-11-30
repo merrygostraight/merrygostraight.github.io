@@ -11,6 +11,7 @@ S.Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: url(${BgImageGreeting}) no-repeat center;
   background-size: cover;
   display: flex;
@@ -34,7 +35,7 @@ S.MessageBox = styled.div`
 S.Message = styled.div`
   color: #AD5B78;
   //color: #ba8a87;
-  font-size: 4vw;
+  font-size: 1.3rem;
 `;
 
 function Greetings({ pageNum }) {
@@ -46,6 +47,7 @@ function Greetings({ pageNum }) {
         <S.Message>세상에,</S.Message>
         <S.Message>둘이 같이 있으니 너무나 좋지 뭐에요!</S.Message>
         <S.Message>그래서 평생 함께 하기로 했답니다.</S.Message>
+        <S.Message>오셔서 축하해 주세요!</S.Message>
       </S.MessageBox>
     </S.Wrapper>
   );

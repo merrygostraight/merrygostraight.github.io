@@ -13,6 +13,7 @@ S.Main = styled.div`
   max-width: 1840px;
   min-width: 240px;
   position: relative;
+  overflow: hidden;
 `;
 
 const pageList = [
@@ -24,7 +25,7 @@ const pageList = [
 ];
 
 function Main() {
-  const [ pageNum, setPageNum ] = useState(1);
+  const [ pageNum, setPageNum ] = useState(3);
   const lastPageNum = 5;
   
   const { ref: documentRef } = useSwipeable({

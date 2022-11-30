@@ -16,6 +16,7 @@ S.Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.7s linear, opacity 0.7s linear;
@@ -31,24 +32,24 @@ S.OverlayBlack = styled.div`
 `;
 S.CoverMain = styled.div`
   margin-top: 3vh;
-  font-size: 6vw;
+  font-size: 2rem;
   color: #F5E9DB;
   z-index: 2;
 `;
 S.CoverName = styled.div`
-  font-size: 5vw;
+  font-size: 1.5rem;
   color: #F5E9DB;
   z-index: 2;
 `;
 S.CoverDate = styled.div`
   margin-top: 5vh;
-  font-size: 4vw;
+  font-size: 1.3rem;
   color: #f5e9db;
   z-index: 2;
 `;
 S.CoverSpot = styled.div`
   margin-top: 2vh;
-  font-size: 4vw;
+  font-size: 1.3rem;
   color: #F5E9DB;
   z-index: 2;
 `;

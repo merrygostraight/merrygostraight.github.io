@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import { useWindowScrollPositions } from 'hooks/useWindowScrollPositions';
 import Cover from 'components/pages/Cover';
 import Greetings from 'components/pages/Greetings';
-import Date from 'components/pages/Date';
+import LocationAndDate from 'components/pages/LocationAndDate';
 
 function Pages({ pageNum }) {
   return (
       <div>
         <Cover pageNum={pageNum} />
         <Greetings pageNum={pageNum} />
-        <Date pageNum={pageNum} />
+        <LocationAndDate pageNum={pageNum} />
       </div>
     );
 }
