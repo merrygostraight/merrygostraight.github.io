@@ -6,8 +6,7 @@ const S = {};
 S.Wrapper = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
   height: 100%;
   display: flex;
   overflow: hidden;

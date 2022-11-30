@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useSwipeable } from 'react-swipeable';
 import Pages from 'components/Pages';
 import Pagination from 'components/pages/Pagination';
 
@@ -26,31 +25,12 @@ const pageList = [
 
 function Main() {
   const [ pageNum, setPageNum ] = useState(1);
-  const lastPageNum = 5;
-  
-  const { ref: documentRef } = useSwipeable({
-    onSwipedUp: () => {
-      if (pageNum < lastPageNum) {
-        setPageNum(pageNum + 1);
-      }
-    },
-    onSwipedDown: () => {
-      if (pageNum > 1) {
-        setPageNum(pageNum - 1);
-      }
-    },
-    // preventDefaultTouchmoveEvent: true,
-    // swipeDuration: 500,
-    // preventScrollOnSwipe: true,
-    trackMouse: true
-  });
   
   useEffect(() => {
     console.log('@@@ pageNum : ', pageNum);
   }, [pageNum]);
   
   useEffect(() => {
-    documentRef(document);
     console.log('@@ when mounted');
   
     return () => {
@@ -60,7 +40,7 @@ function Main() {
   
   return (
     <S.Main id='main'>
-      <Pages pageNum={pageNum} />
+      <Pages pageNum={pageNum} setPageNum={setPageNum} lastPageNum={pageList.length} />
       <Pagination pageNum={pageNum} pages={pageList} />
     </S.Main>
   );

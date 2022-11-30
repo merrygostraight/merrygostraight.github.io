@@ -31,7 +31,7 @@
   text-align: center;
   border-bottom: 1px solid #aeaeae;
   border-top-left-radius: 0.3rem;
-  padding: 4px 0.4rem;
+  padding: 2px 0.2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
   margin-top: 4px;
   color: #4d4d1a;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 1.3rem;
 }
 
 .react-datepicker-time__header {
@@ -93,7 +93,7 @@
 }
 
 .react-datepicker__month {
-  margin: 0.4rem;
+  margin: 0.2rem;
   text-align: center;
 }
 .react-datepicker__month .react-datepicker__month-text,
@@ -199,8 +199,8 @@
 .react-datepicker__week-number {
   color: #ccc;
   display: inline-block;
-  width: 1.7rem;
-  line-height: 1.7rem;
+  width: 1.1rem;
+  line-height: 1.1rem;
   text-align: center;
   margin: 0.166rem;
 }
@@ -230,8 +230,8 @@
 .react-datepicker__time-name {
   color: #4d4d1a;
   display: inline-block;
-  width: 1.7rem;
-  line-height: 1.7rem;
+  width: 1.1rem;
+  line-height: 1.1rem;
   text-align: center;
   margin: 0.166rem;
 }

@@ -1,5 +1,5 @@
 /* global kakao */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BgImageDate from 'assets/date_bg.jpeg';
@@ -16,7 +16,9 @@ S.Wrapper = styled.div`
   height: 100%;
   overflow: hidden;
   background: url(${BgImageDate}) no-repeat center;
-  background-size: cover;
+  background-size: contain;
+  background-color: #ffffff;
+  background-position: top;
   display: flex;
   flex-direction: column;
   justify-content: center;

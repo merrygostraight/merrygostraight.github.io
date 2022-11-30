@@ -35,7 +35,7 @@ S.MessageBox = styled.div`
 S.Message = styled.div`
   color: #AD5B78;
   //color: #ba8a87;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `;
 
 function Greetings({ pageNum }) {
