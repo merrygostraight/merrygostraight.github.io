@@ -36,7 +36,7 @@ S.MessageBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1vh;
-  padding-top: 9vh;
+  padding-top: 7vh;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
@@ -137,7 +137,7 @@ function LocationAndDate({ pageNum, disableSwipe }) {
   const handleMapTouchEnd = () => disableSwipe(false);
   const handleClickCopyAddr = () => toast("복사되었습니다! 원하는 곳에 가서 붙여넣기 하세요.", {
     position: "bottom-center",
-    autoClose: 15000,
+    autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
