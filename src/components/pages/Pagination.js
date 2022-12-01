@@ -22,12 +22,12 @@ S.DotsGroup = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 1.3rem;
-  height: 20vh;
+  height: 240px;
   position: relative;
 `;
 S.Dots = styled.div`
-  width: 1.2vh;
-  height: 1.2vh;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #aaaaaa;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
@@ -35,13 +35,13 @@ S.Dots = styled.div`
   transition: visibility 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
 `;
 S.DotHighLight = styled.div`
-  width: 2vh;
-  height: 2vh;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   opacity: 0.3;
   background-color: #AD5B78;
   position: absolute;
-  top: ${({ pageNum }) => 1+(pageNum-1)*4}vh;
+  top: ${({ pageNum }) => 14+(pageNum-1)*48}px;
   transition: top 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
 `;
 

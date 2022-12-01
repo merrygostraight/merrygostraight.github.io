@@ -89,7 +89,6 @@ S.MessageMapAlt = styled.div`
 `;
 S.MapNaver = styled.div`
   display: flex;
-  width: 200px;
   gap: 6px;
   justify-content: center;
   align-items: center;
