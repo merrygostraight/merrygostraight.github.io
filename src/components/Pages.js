@@ -6,7 +6,7 @@ import LocationAndDate from 'components/pages/LocationAndDate';
 import { useSwipeable } from 'react-swipeable';
 import PhotoAlbum from 'components/pages/PhotoAlbum';
 
-function Pages({ pageNum, setPageNum, lastPageNum }) {
+function Pages({ pageNum, setPageNum, lastPageNum, showPagination }) {
   const [swipeDisabled, setSwipeDisabled] = useState();
 
   const swipeHandlers = useSwipeable({
@@ -33,7 +33,11 @@ function Pages({ pageNum, setPageNum, lastPageNum }) {
       <div {...swipeHandlers}>
         <Cover pageNum={pageNum} />
         <Greetings pageNum={pageNum} />
-        <PhotoAlbum pageNum={pageNum} />
+        <PhotoAlbum
+          pageNum={pageNum}
+          showPagination={showPagination}
+          disableSwipe={setSwipeDisabled}
+        />
         <LocationAndDate pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
       </div>
     </>

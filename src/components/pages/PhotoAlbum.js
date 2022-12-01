@@ -8,6 +8,8 @@ import photo03 from 'assets/gallary/wedding3.jpeg'
 import photo04 from 'assets/gallary/wedding4.jpeg'
 import photo05 from 'assets/gallary/wedding5.jpeg'
 import photo06 from 'assets/gallary/wedding6.jpeg'
+import JyInstaImg from 'assets/personal/jy_instagram.jpg'
+import SgInstaImg from 'assets/personal/sg_instagram.jpg'
 
 const S = {};
 
@@ -64,7 +66,30 @@ S.Photo = styled.div`
   }
 `;
 S.PhotoPopup = styled.div`
-  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+`;
+S.Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.7;
+`;
+S.PhotoFrame = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
 `;
 S.InstagramArea = styled.div`
   display: flex;
@@ -90,8 +115,9 @@ S.HumanFace = styled.div`
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  border: 1px solid #4d4d1a;
   margin-bottom: 16px;
+  background: url(${({ image }) => image}) no-repeat center;
+  background-size: cover;
 `;
 S.HumanName = styled.div`
   font-size: 0.7rem;
@@ -107,24 +133,28 @@ const photos = [
   { title: 'photos6', image: photo06 },
 ];
 
-function PhotoAlbum({ pageNum }) {
+function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
   const visible = pageNum === 3;
-  const [isPhotoPopupOpen, setIsPhotoPopupOpen] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   
+  const closePhotoPopup = () => {
+    setSelectedPhoto(null);
+    showPagination(true);
+    disableSwipe(false);
+  };
+  
   const handleClickImage = (index) => {
-    if (isPhotoPopupOpen) {
-      setIsPhotoPopupOpen(false);
+    if (selectedPhoto !== null) {
+      closePhotoPopup();
       return;
     }
 
     const { image } = photos[index];
     setSelectedPhoto(image);
-    setIsPhotoPopupOpen(true);
+    showPagination(false);
+    disableSwipe(true);
   };
   
-  const closePhotoPopup = () => setIsPhotoPopupOpen(false);
-
   return (
     <S.Wrapper visible={visible}>
       <S.Gallary>
@@ -138,15 +168,20 @@ function PhotoAlbum({ pageNum }) {
           />
         ))}
       </S.Gallary>
-      <S.PhotoPopup open={isPhotoPopupOpen} image={selectedPhoto} onClick={closePhotoPopup}/>
+      {selectedPhoto !== null && (
+        <S.PhotoPopup onClick={closePhotoPopup}>
+          <S.Overlay />
+          <S.PhotoFrame src={selectedPhoto} />
+        </S.PhotoPopup>
+      )}
       <S.InstagramArea visible={visible}>
-        <S.Human>
-          <S.HumanFace />
+        <S.Human onClick={() => window.open("https://www.instagram.com/seunggyu9592", "_blank")}>
+          <S.HumanFace image={SgInstaImg} />
           <S.HumanName>승규 인스타그램</S.HumanName>
           <S.HumanName>구경가기</S.HumanName>
         </S.Human>
-        <S.Human>
-          <S.HumanFace />
+        <S.Human onClick={() => window.open("https://www.instagram.com/ma_entropy", "_blank")}>
+          <S.HumanFace image={JyInstaImg} />
           <S.HumanName>주연 인스타그램</S.HumanName>
           <S.HumanName>구경가기</S.HumanName>
         </S.Human>

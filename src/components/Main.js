@@ -25,6 +25,7 @@ const pageList = [
 
 function Main() {
   const [ pageNum, setPageNum ] = useState(0);
+  const [ isShowPagination, setShowPagination ] = useState(true);
   
   useEffect(() => {
     setPageNum(1);
@@ -32,8 +33,15 @@ function Main() {
   
   return (
     <S.Main id='main'>
-      <Pages pageNum={pageNum} setPageNum={setPageNum} lastPageNum={pageList.length} />
-      <Pagination pageNum={pageNum} pages={pageList} setPageNum={setPageNum} />
+      <Pages
+        pageNum={pageNum}
+        setPageNum={setPageNum}
+        lastPageNum={pageList.length}
+        showPagination={setShowPagination}
+      />
+      {isShowPagination &&
+        <Pagination pageNum={pageNum} pages={pageList} setPageNum={setPageNum} />
+      }
     </S.Main>
   );
 }
