@@ -29,12 +29,14 @@ function Pages({ pageNum, setPageNum, lastPageNum }) {
   });
   
   return (
+    <>
       <div {...swipeHandlers}>
         <Cover pageNum={pageNum} />
         <Greetings pageNum={pageNum} />
-        <LocationAndDate pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
         <PhotoAlbum pageNum={pageNum} />
+        <LocationAndDate pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
       </div>
+    </>
     );
 }
 
