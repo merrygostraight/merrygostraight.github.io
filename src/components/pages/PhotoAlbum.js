@@ -28,8 +28,9 @@ S.Wrapper = styled.div`
   transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
 S.Gallary = styled.div`
+  padding-top: 1vh;
   display: grid;
-  gap: 8px;
+  gap: 6px;
   width: 90vw;
   height: 90vw;
   max-width: 1440px;
@@ -79,21 +80,21 @@ S.InstagramArea = styled.div`
     transform 0.5s linear 1s;
 `;
 S.Human = styled.div`
-  margin-top: 60px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
 `;
 S.HumanFace = styled.div`
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #4d4d1a;
+  margin-bottom: 16px;
 `;
 S.HumanName = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 `;
 
 const photos = [
@@ -141,11 +142,13 @@ function PhotoAlbum({ pageNum }) {
       <S.InstagramArea visible={visible}>
         <S.Human>
           <S.HumanFace />
-          <S.HumanName>승규 인스타 구경가기</S.HumanName>
+          <S.HumanName>승규 인스타그램</S.HumanName>
+          <S.HumanName>구경가기</S.HumanName>
         </S.Human>
         <S.Human>
           <S.HumanFace />
-          <S.HumanName>주연 인스타 구경가기</S.HumanName>
+          <S.HumanName>주연 인스타그램</S.HumanName>
+          <S.HumanName>구경가기</S.HumanName>
         </S.Human>
       </S.InstagramArea>
     </S.Wrapper>

@@ -33,7 +33,7 @@ function Main() {
   return (
     <S.Main id='main'>
       <Pages pageNum={pageNum} setPageNum={setPageNum} lastPageNum={pageList.length} />
-      <Pagination pageNum={pageNum} pages={pageList} />
+      <Pagination pageNum={pageNum} pages={pageList} setPageNum={setPageNum} />
     </S.Main>
   );
 }

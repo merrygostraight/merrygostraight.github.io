@@ -6,7 +6,7 @@ const S = {};
 S.Wrapper = styled.div`
   position: fixed;
   top: 0;
-  right: 0;
+  right: 4px;
   height: 100%;
   display: flex;
   overflow: hidden;
@@ -45,13 +45,19 @@ S.DotHighLight = styled.div`
   transition: top 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
 `;
 
-function Pagination({ pageNum, pages }) {
+function Pagination({ pageNum, pages, setPageNum }) {
   return (
     <S.Wrapper visible={pageNum > 1}>
       <S.DotsGroup>
       {
         pages.map(({ index, category }) => (
-          <S.Dots key={index} pageNum={index} title={category} visible={pageNum !== index} />
+          <S.Dots
+            key={index}
+            pageNum={index}
+            title={category}
+            visible={pageNum !== index}
+            onClick={() => setPageNum(index)}
+          />
         ))
       }
       <S.DotHighLight pageNum={pageNum} />
