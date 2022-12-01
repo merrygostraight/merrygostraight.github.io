@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.186feac4.css",
-    "main.js": "/static/js/main.69846a40.js",
+    "main.css": "/static/css/main.be06798c.css",
+    "main.js": "/static/js/main.52a9a45a.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
     "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
     "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
@@ -14,12 +14,12 @@
     "static/media/greetings_bg.jpeg": "/static/media/greetings_bg.cd7be07176d8ad35ae0d.jpeg",
     "static/media/date_bg.jpeg": "/static/media/date_bg.a187f773cf653d43c5ad.jpeg",
     "index.html": "/index.html",
-    "main.186feac4.css.map": "/static/css/main.186feac4.css.map",
-    "main.69846a40.js.map": "/static/js/main.69846a40.js.map",
+    "main.be06798c.css.map": "/static/css/main.be06798c.css.map",
+    "main.52a9a45a.js.map": "/static/js/main.52a9a45a.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.186feac4.css",
-    "static/js/main.69846a40.js"
+    "static/css/main.be06798c.css",
+    "static/js/main.52a9a45a.js"
   ]
 }
