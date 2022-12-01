@@ -36,7 +36,7 @@ S.MessageBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1vh;
-  padding-top: 7vh;
+  padding-top: 5vh;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
@@ -78,7 +78,7 @@ S.MessageDate = styled.div`
 S.Map = styled.div`
   width: 60vw;
   max-width: 400px;
-  height: 18vh;
+  height: 20vh;
   border-radius: 1vh;
   border: 1px solid #bbbbbb;
   transform: ${({ visible }) => visible ? 'translateY(0)' : 'translateY(10px)'};
@@ -89,13 +89,15 @@ S.MessageMapAlt = styled.div`
 `;
 S.MapNaver = styled.div`
   display: flex;
-  gap: 6px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
+  height: 28px;
 `;
 S.MapNaverMessage = styled.div`
   font-size: 0.9rem;
-  line-height: 1rem;
+  line-height: 25px;
+  padding-top: 2px;
 `;
 S.MapNaverButton = styled.div`
   background-color: #4d4d1a;
@@ -103,9 +105,9 @@ S.MapNaverButton = styled.div`
   font-weight: 500;
   border-radius: 4px;
   font-size: 0.8rem;
-  padding: 4px 3px 3px 3px;
-  height: 0.9rem;
-  line-height: 0.9rem;
+  padding: 5px 4px 4px 4px;
+  height: 1rem;
+  line-height: 1rem;
 `;
 S.Calendar = styled.div`
   transform: ${({ visible }) => visible ? 'translateY(0)' : 'translateY(10px)'};
@@ -124,7 +126,7 @@ function LocationAndDate({ pageNum, disableSwipe }) {
     let markerPosition  = new kakao.maps.LatLng(37.59203956518369, 127.0356670548376);
     let options = {
       center: markerPosition,
-      level: 4
+      level: 5
     };
     let map = new kakao.maps.Map(container, options);
     let marker = new kakao.maps.Marker({
