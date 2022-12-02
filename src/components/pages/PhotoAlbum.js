@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import photo00 from 'assets/gallary/wedding0.JPG'
-import photo01 from 'assets/gallary/wedding1.jpeg'
-import photo02 from 'assets/gallary/wedding2.jpeg'
-import photo03 from 'assets/gallary/wedding3.jpeg'
-import photo04 from 'assets/gallary/wedding4.jpeg'
-import photo05 from 'assets/gallary/wedding5.jpeg'
-import photo06 from 'assets/gallary/wedding6.jpeg'
+import photo00 from 'assets/gallery/wedding0.JPG'
+import photo01 from 'assets/gallery/wedding1.jpeg'
+import photo02 from 'assets/gallery/wedding2.jpeg'
+import photo03 from 'assets/gallery/wedding3.jpeg'
+import photo04 from 'assets/gallery/wedding4.jpeg'
+import photo05 from 'assets/gallery/wedding5.jpeg'
+import photo06 from 'assets/gallery/wedding6.jpeg'
 import JyInstaImg from 'assets/personal/jy_instagram.jpg'
 import SgInstaImg from 'assets/personal/sg_instagram.jpg'
 
@@ -25,12 +25,12 @@ S.Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 32px;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
-S.Gallary = styled.div`
-  padding-top: 1vh;
+S.Gallery = styled.div`
   display: grid;
   gap: 6px;
   width: 90vw;
@@ -50,11 +50,9 @@ S.Photo = styled.div`
 
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transform: ${({ visible }) => visible ? 'translate(0,0)' : 'translate(16px,16px)'};
   transition:
     visibility 0.5s linear 0.5s,
-    opacity 1.2s linear 0.5s,
-    transform 0.3s linear ${({ index }) => 0.5+index*0.1}s;
+    opacity 1.2s linear ${({ index }) => 0.5+index*0.1}s;
 
   &:nth-child(1) {
     grid-column: 1 / 3;
@@ -98,14 +96,12 @@ S.InstagramArea = styled.div`
 
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transform: ${({ visible }) => visible ? 'translate(0,0)' : 'translate(0,20px)'};
   transition:
     visibility 0.5s linear 0.5s,
-    opacity 1.2s linear 0.5s,
-    transform 0.5s linear 1s;
+    opacity 1.2s linear 1.5s;
 `;
 S.Human = styled.div`
-  margin-top: 50px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,6 +117,19 @@ S.HumanFace = styled.div`
 `;
 S.HumanName = styled.div`
   font-size: 0.7rem;
+`;
+S.IntoduceWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+`;
+S.Intoduce = styled.div`
+  font-size: 0.9rem;
+  & > span {
+    font-size: 0.7rem;
+  }
 `;
 
 const photos = [
@@ -157,7 +166,11 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
   
   return (
     <S.Wrapper visible={visible}>
-      <S.Gallary>
+      <S.IntoduceWrap>
+        <S.Intoduce>김지룡 이경우 <span>의 아들</span> 승규</S.Intoduce>
+        <S.Intoduce>마재언 백경숙 <span>의 딸</span> 주연</S.Intoduce>
+      </S.IntoduceWrap>
+      <S.Gallery>
         {photos.map(({ title, image }, index) => (
           <S.Photo
             visible={visible}
@@ -167,7 +180,7 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
             onClick={() => handleClickImage(index)}
           />
         ))}
-      </S.Gallary>
+      </S.Gallery>
       {selectedPhoto !== null && (
         <S.PhotoPopup onClick={closePhotoPopup}>
           <S.Overlay />
