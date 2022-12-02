@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import BgImageDate from 'assets/date_bg.jpeg';
+import BgImageDate from 'assets/backgrounds/date_bg.jpeg';
 import Calendar from 'components/modules/Calendar';
 import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 import { toast, ToastContainer } from 'react-toastify';
@@ -36,11 +36,11 @@ S.MessageBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1vh;
-  padding-top: 5vh;
+  padding-top: 4vh;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
-  color: #4d4d1a;
+  color: #29340b;
   font-size: 1.2rem;
 `;
 S.MessageTitle = styled.div`
@@ -65,10 +65,10 @@ S.AddressCopyButton = styled.div`
   padding: 4px 3px 3px 3px;
   height: 0.9rem;
   line-height: 0.9rem;
-  color: #4d4d1a;
+  color: #29340b;
   font-weight: 500;
   border-radius: 4px;
-  border: 1px solid #4d4d1a;
+  border: 1px solid #29340b;
 `;
 S.MessageDate = styled.div`
   font-size: 1rem;
@@ -100,7 +100,7 @@ S.MapNaverMessage = styled.div`
   padding-top: 2px;
 `;
 S.MapNaverButton = styled.div`
-  background-color: #4d4d1a;
+  background-color: #29340b;
   color: #ffffff;
   font-weight: 500;
   border-radius: 4px;

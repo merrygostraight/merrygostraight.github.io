@@ -5,11 +5,13 @@ import Greetings from 'components/pages/Greetings';
 import LocationAndDate from 'components/pages/LocationAndDate';
 import { useSwipeable } from 'react-swipeable';
 import PhotoAlbum from 'components/pages/PhotoAlbum';
+import Contact from 'components/pages/Contact';
 
 function Pages({ pageNum, setPageNum, lastPageNum, showPagination }) {
   const [swipeDisabled, setSwipeDisabled] = useState();
 
   const swipeHandlers = useSwipeable({
+    delta: { up: 80, down: 80 },
     onSwipedUp: () => {
       if (swipeDisabled) return;
       if (pageNum < lastPageNum) {
@@ -22,9 +24,6 @@ function Pages({ pageNum, setPageNum, lastPageNum, showPagination }) {
         setPageNum(pageNum - 1);
       }
     },
-    // preventDefaultTouchmoveEvent: true,
-    // swipeDuration: 500,
-    // preventScrollOnSwipe: true,
     trackMouse: true
   });
   
@@ -39,6 +38,7 @@ function Pages({ pageNum, setPageNum, lastPageNum, showPagination }) {
           disableSwipe={setSwipeDisabled}
         />
         <LocationAndDate pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
+        <Contact pageNum={pageNum} disableSwipe={setSwipeDisabled}/>
       </div>
     </>
     );

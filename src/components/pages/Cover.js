@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import BgImageCover from 'assets/cover_bg.jpeg';
+import BgImageCover from 'assets/backgrounds/cover_bg.jpeg';
 
 const S = {};
 S.Wrapper = styled.div`

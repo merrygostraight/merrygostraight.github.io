@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import BgImageGreeting from 'assets/greetings_bg.jpeg';
+import BgImageGreeting from 'assets/backgrounds/greetings_bg.jpeg';
 
 const S = {};
 
@@ -23,7 +23,7 @@ S.Wrapper = styled.div`
   transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
 S.MessageBox = styled.div`
-  margin-top: -12px;
+  margin-top: -48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,19 +33,22 @@ S.MessageBox = styled.div`
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
 `;
 S.MessageMD = styled.div`
-  color: #AD5B78;
+  color: #863250;
   //color: #ba8a87;
   font-size: 1.1rem;
   margin-bottom: 8px;
 `;
 S.MessageSM = styled.div`
-  color: #AD5B78;
+  color: #863250;
   //color: #ba8a87;
   font-size: 0.9rem;
   margin-bottom: 4px;
 `;
-S.Buffer = styled.div`
+S.BufferMD = styled.div`
   height: 36px;
+`;
+S.BufferSM = styled.div`
+  height: 8px;
 `;
 
 function Greetings({ pageNum }) {
@@ -57,9 +60,10 @@ function Greetings({ pageNum }) {
         <S.MessageMD>서로가 남이었던 시절,</S.MessageMD>
         <S.MessageMD>멀찍이서 서로를 바라보며</S.MessageMD>
         <S.MessageMD>둘은 생각했어요.</S.MessageMD>
+        <S.BufferSM />
         <S.MessageSM>'저 사람은 왜저리 운동을 열심히 하지?'</S.MessageSM>
         <S.MessageSM>'저 사람은 항상 에너지랑 열정이 굉장하네.'</S.MessageSM>
-        <S.Buffer />
+        <S.BufferMD />
         <S.MessageMD>그런데 세상에,</S.MessageMD>
         <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐에요!</S.MessageMD>
         <S.MessageMD>그래서 평생 함께 하기로 했답니다.</S.MessageMD>
