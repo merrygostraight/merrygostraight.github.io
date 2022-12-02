@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.be06798c.css",
-    "main.js": "/static/js/main.361f270a.js",
+    "main.js": "/static/js/main.261873cb.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
     "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
     "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
@@ -15,14 +15,18 @@
     "static/media/sg_instagram.jpg": "/static/media/sg_instagram.3b0bee0694696c2c976b.jpg",
     "static/media/jy_instagram.jpg": "/static/media/jy_instagram.9d353b371525e03ff227.jpg",
     "static/media/date_bg.jpeg": "/static/media/date_bg.1e88ed5fa96b8f8ef8a2.jpeg",
-    "static/media/contact_bg4.jpeg": "/static/media/contact_bg4.691f7054787413a13cfb.jpeg",
+    "static/media/jy.jpeg": "/static/media/jy.915a675040bb0d787c58.jpeg",
+    "static/media/sg.jpeg": "/static/media/sg.522d218f1a93afdd1018.jpeg",
+    "static/media/jy_mom.jpg": "/static/media/jy_mom.9b978d694edf13395888.jpg",
+    "static/media/contact_bg.jpeg": "/static/media/contact_bg.691f7054787413a13cfb.jpeg",
+    "static/media/jy_daddy.jpg": "/static/media/jy_daddy.e3267aeb14cd3ce657c3.jpg",
     "index.html": "/index.html",
     "main.be06798c.css.map": "/static/css/main.be06798c.css.map",
-    "main.361f270a.js.map": "/static/js/main.361f270a.js.map",
+    "main.261873cb.js.map": "/static/js/main.261873cb.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be06798c.css",
-    "static/js/main.361f270a.js"
+    "static/js/main.261873cb.js"
   ]
 }
