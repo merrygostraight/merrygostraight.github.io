@@ -57,12 +57,13 @@ function Greetings({ pageNum }) {
   return (
     <S.Wrapper visible={visible}>
       <S.MessageBox visible={visible}>
-        <S.MessageMD>서로가 남이었던 시절,</S.MessageMD>
-        <S.MessageMD>멀찍이서 서로를 바라보며</S.MessageMD>
-        <S.MessageMD>둘은 생각했어요.</S.MessageMD>
+        <S.MessageMD>서로가 남이었던 시절, 둘은 생각했어요.</S.MessageMD>
         <S.BufferSM />
-        <S.MessageSM>'저 사람은 왜저리 운동을 열심히 하지?'</S.MessageSM>
-        <S.MessageSM>'저 사람은 항상 에너지랑 열정이 굉장하네.'</S.MessageSM>
+        <S.MessageSM>'저분은 운동을 매일 열심히 하시네.'</S.MessageSM>
+        <S.MessageSM>'와, 저분 무게 엄청 치신다.'</S.MessageSM>
+        <S.BufferSM />
+        <S.MessageMD>매일 같은 공간에서 운동하던 두 사람은,</S.MessageMD>
+        <S.MessageMD>어느새 반갑게 인사하는 사이가 되었어요.</S.MessageMD>
         <S.BufferMD />
         <S.MessageMD>그런데 세상에,</S.MessageMD>
         <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐에요!</S.MessageMD>

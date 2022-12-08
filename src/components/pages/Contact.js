@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BgImageGreeting from 'assets/backgrounds/contact_bg.jpeg';
-import JyDaddyFace from 'assets/personal/jy_daddy.jpg';
-import JyMomFace from 'assets/personal/jy_mom.jpg';
-import JyFace from 'assets/personal/jy.jpeg';
-import SgFace from 'assets/personal/sg.jpeg';
+import Person from 'components/modules/Person';
+import { FAMILY_INFO } from 'constants/const';
+import ContactPopup from 'components/modules/ContactPopup';
 const S = {};
 
 S.Wrapper = styled.div`
@@ -59,29 +58,23 @@ S.Parent = styled.div`
   align-items: center;
   gap: 20px;
 `;
-S.People = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-`;
-S.Name = styled.div`
-  color: #29340b;
-  font-size: 0.7rem;
-`;
-S.Face = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid #aaaaaa;
-  background: url(${({ image }) => image}) no-repeat center;
-  background-size: cover;
-  
-`;
 
-function Contact({ pageNum }) {
+function Contact({ pageNum, disableSwipe }) {
   const visible = pageNum === 5;
+  const [openPopup, setOpenPopup] = useState(false);
+  const [selectedPerson, setSelectedPerson] = useState({});
+  
+  const handleClickPerson = (data) => {
+    setSelectedPerson(data);
+    disableSwipe(true);
+    setOpenPopup(true);
+  };
+  
+  const closePopup = () => {
+    setOpenPopup(false);
+    disableSwipe(false);
+  };
+  
   
   return (
     <S.Wrapper visible={visible}>
@@ -89,39 +82,22 @@ function Contact({ pageNum }) {
         <S.Title>연락처</S.Title>
         <S.FamillyArea>
           <S.Family>
-            <S.People>
-              <S.Face image={SgFace}></S.Face>
-              <S.Name>신랑 김승규</S.Name>
-            </S.People>
+            <Person data={FAMILY_INFO.SG} onClickPerson={handleClickPerson} />
             <S.Parent>
-              <S.People>
-                <S.Face></S.Face>
-                <S.Name>아버지 김지룡</S.Name>
-              </S.People>
-              <S.People>
-                <S.Face></S.Face>
-                <S.Name>어머니 이경우</S.Name>
-              </S.People>
+            <Person data={FAMILY_INFO.SG_FATHER} onClickPerson={handleClickPerson} />
+            <Person data={FAMILY_INFO.SG_MOTHER} onClickPerson={handleClickPerson} />
             </S.Parent>
           </S.Family>
           <S.Family>
-            <S.People>
-              <S.Face image={JyFace}></S.Face>
-              <S.Name>신부 마주연</S.Name>
-            </S.People>
+            <Person data={FAMILY_INFO.JY} onClickPerson={handleClickPerson} />
             <S.Parent>
-              <S.People>
-                <S.Face image={JyDaddyFace}></S.Face>
-                <S.Name>아버지 마재언</S.Name>
-              </S.People>
-              <S.People>
-                <S.Face image={JyMomFace}></S.Face>
-                <S.Name>어머니 백경숙</S.Name>
-              </S.People>
+            <Person data={FAMILY_INFO.JY_FATHER} onClickPerson={handleClickPerson} />
+            <Person data={FAMILY_INFO.JY_MOTHER} onClickPerson={handleClickPerson} />
             </S.Parent>
           </S.Family>
         </S.FamillyArea>
       </S.Content>
+      {openPopup && <ContactPopup selectedPerson={selectedPerson} onClose={closePopup} />}
     </S.Wrapper>
   );
 }
