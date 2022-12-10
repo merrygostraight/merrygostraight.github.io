@@ -143,6 +143,7 @@
   word-break: break-word;
   -ms-flex: 1;
   flex: 1;
+  text-align: center;
 }
 .Toastify__toast-icon {
   -webkit-margin-end: 10px;

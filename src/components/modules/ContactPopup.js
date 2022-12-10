@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Person from 'components/modules/Person';
+import { CopyToClipboard } from 'react-copy-to-clipboard/src';
+import { toast } from 'react-toastify';
+import 'assets/styles/toastify.css';
 
 const S = {};
 S.PopupOverlay = styled.div`
@@ -14,9 +17,10 @@ S.PopupOverlay = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0,0.5);
-  z-index: 100;
+  z-index: 1;
 `;
 S.Popup = styled.div`
+  z-index: 10;
   width: 70vw;
   max-width: 400px;
   height: 20vh;
@@ -52,14 +56,37 @@ S.Call = styled.div`
 `;
 
 function ContactPopup({ selectedPerson, onClose }) {
+  const handleClickCopyTel = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    toast(<>전화번호가 복사되었습니다!<br />원하는 곳에 가서 붙여넣기 하세요.</>, {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+  
+  const handleClickCall = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    document.location.href=`tel:${selectedPerson.tel}`
+  };
+
   return (
     <S.PopupOverlay onClick={onClose}>
       <S.Popup>
         <Person data={selectedPerson} />
         <S.ContactInfoArea>
-          <S.CopyButton onClick={() => {}}>복사하기</S.CopyButton>
+          <CopyToClipboard text={selectedPerson.tel}>
+            <S.CopyButton onClick={handleClickCopyTel}>복사하기</S.CopyButton>
+          </CopyToClipboard>
           <S.Tel>{selectedPerson.tel}</S.Tel>
-          <S.Call onClick={() => {}}>전화하기</S.Call>
+          <S.Call onClick={handleClickCall}>전화하기</S.Call>
         </S.ContactInfoArea>
       </S.Popup>
     </S.PopupOverlay>

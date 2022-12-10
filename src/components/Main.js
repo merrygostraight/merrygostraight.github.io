@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Pages from 'components/Pages';
 import Pagination from 'components/pages/Pagination';
+import { ToastContainer } from 'react-toastify';
 
 const S = {};
 S.Main = styled.div`
@@ -42,6 +43,7 @@ function Main() {
       {isShowPagination &&
         <Pagination pageNum={pageNum} pages={pageList} setPageNum={setPageNum} />
       }
+      <ToastContainer />
     </S.Main>
   );
 }

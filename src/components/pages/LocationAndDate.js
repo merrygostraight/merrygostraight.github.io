@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import BgImageDate from 'assets/backgrounds/date_bg.jpeg';
 import Calendar from 'components/modules/Calendar';
 import { CopyToClipboard } from 'react-copy-to-clipboard/src';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'assets/styles/toastify.css';
 const { kakao } = window;
 
@@ -137,16 +137,18 @@ function LocationAndDate({ pageNum, disableSwipe }) {
   
   const handleMapTouchStart = () => disableSwipe(true);
   const handleMapTouchEnd = () => disableSwipe(false);
-  const handleClickCopyAddr = () => toast("복사되었습니다! 원하는 곳에 가서 붙여넣기 하세요.", {
-    position: "bottom-center",
-    autoClose: 3000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+  const handleClickCopyAddr = () => {
+    toast(<>주소가 복사되었습니다!<br />원하는 곳에 가서 붙여넣기 하세요.</>, {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
   
   return (
     <S.Wrapper visible={visible}>
@@ -179,7 +181,6 @@ function LocationAndDate({ pageNum, disableSwipe }) {
           </S.MapNaverButton>
         </S.MapNaver>
       </S.MessageBox>
-      <ToastContainer />
     </S.Wrapper>
   );
 }

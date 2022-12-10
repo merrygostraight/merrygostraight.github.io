@@ -62,8 +62,8 @@ function Greetings({ pageNum }) {
         <S.MessageSM>'저분은 운동을 매일 열심히 하시네.'</S.MessageSM>
         <S.MessageSM>'와, 저분 무게 엄청 치신다.'</S.MessageSM>
         <S.BufferSM />
-        <S.MessageMD>매일 같은 공간에서 운동하던 두 사람은,</S.MessageMD>
-        <S.MessageMD>어느새 반갑게 인사하는 사이가 되었어요.</S.MessageMD>
+        <S.MessageMD>매일 오며 가며 보다가,</S.MessageMD>
+        <S.MessageMD>인사도 하고 지내게 되고 뭐 그랬더랬죠.</S.MessageMD>
         <S.BufferMD />
         <S.MessageMD>그런데 세상에,</S.MessageMD>
         <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐에요!</S.MessageMD>
