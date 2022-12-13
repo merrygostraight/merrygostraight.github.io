@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Person from 'components/modules/Person';
 import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 import { toast } from 'react-toastify';
 import 'assets/styles/toastify.css';
+import { ACCOUNT_LIST } from 'constants/const';
 
 const S = {};
 S.PopupOverlay = styled.div`
@@ -30,9 +30,50 @@ S.Popup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 12px 6px 6px 6px;
+  margin-top: -96px;
+  padding: 12px 18px;
   justify-content: center;
   align-items: center;
+`;
+S.Content = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #29340b;
+  gap: 12px;
+`;
+S.AccountArea = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #dddddd;
+`;
+S.AccountInfoArea = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  gap: 10px;
+  padding: 6px 8px;
+`;
+S.Name = styled.div`
+
+`;
+S.Account = styled.div`
+
+`;
+S.AccountCopyButton = styled.div`
+  border: 1px dashed #29340b;
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5;
 `;
 
 function AccountPopup({ onClose }) {
@@ -51,10 +92,27 @@ function AccountPopup({ onClose }) {
     });
   }
   
+  const eventPreventDefault = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  };
+  
   return (
     <S.PopupOverlay onClick={onClose}>
       <S.Popup>
-        hi
+        <S.Content>
+          {ACCOUNT_LIST.map(({name, account}) => (
+            <S.AccountArea>
+              <S.AccountInfoArea onClick={eventPreventDefault}>
+                <S.Name>{name}</S.Name>
+                <S.Account>{account}</S.Account>
+              </S.AccountInfoArea>
+              <CopyToClipboard text={account}>
+                <S.AccountCopyButton onClick={handleClickCopyAccount}>복사하기</S.AccountCopyButton>
+              </CopyToClipboard>
+            </S.AccountArea>
+          ))}
+        </S.Content>
       </S.Popup>
     </S.PopupOverlay>
   );

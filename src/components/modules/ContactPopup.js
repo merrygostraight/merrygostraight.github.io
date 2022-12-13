@@ -27,6 +27,7 @@ S.Popup = styled.div`
   max-height: 600px;
   background-color: #f0f0f0;
   border-radius: 8px;
+  margin-top: -96px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -76,6 +77,11 @@ function ContactPopup({ selectedPerson, onClose }) {
     e.preventDefault();
     document.location.href=`tel:${selectedPerson.tel}`
   };
+  
+  const eventPreventDefault = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  };
 
   return (
     <S.PopupOverlay onClick={onClose}>
@@ -85,7 +91,7 @@ function ContactPopup({ selectedPerson, onClose }) {
           <CopyToClipboard text={selectedPerson.tel}>
             <S.CopyButton onClick={handleClickCopyTel}>복사하기</S.CopyButton>
           </CopyToClipboard>
-          <S.Tel>{selectedPerson.tel}</S.Tel>
+          <S.Tel onClick={eventPreventDefault}>{selectedPerson.tel}</S.Tel>
           <S.Call onClick={handleClickCall}>전화하기</S.Call>
         </S.ContactInfoArea>
       </S.Popup>
