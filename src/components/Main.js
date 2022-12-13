@@ -9,7 +9,7 @@ S.Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   max-width: 1840px;
   min-width: 240px;
   position: relative;

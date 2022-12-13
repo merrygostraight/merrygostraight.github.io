@@ -29,6 +29,7 @@ S.OverlayBlack = styled.div`
   height: 100%;
   background-color: #000000;
   opacity: 0.5;
+  overflow: hidden;
 `;
 S.CoverMain = styled.div`
   margin-top: 3vh;
