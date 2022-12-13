@@ -18,7 +18,7 @@ S.Face = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #cccccc;
   background: url(${({ image }) => image}) no-repeat center;
   background-size: cover;
 `;

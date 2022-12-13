@@ -84,6 +84,7 @@ S.Overlay = styled.div`
   opacity: 0.7;
 `;
 S.PhotoFrame = styled.img`
+  margin-top: -96px;
   width: 100%;
   height: 100%;
   object-fit: contain;

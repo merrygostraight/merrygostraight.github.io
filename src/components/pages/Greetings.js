@@ -23,7 +23,7 @@ S.Wrapper = styled.div`
   transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
 S.MessageBox = styled.div`
-  margin-top: -48px;
+  margin-top: -72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,13 +57,14 @@ function Greetings({ pageNum }) {
   return (
     <S.Wrapper visible={visible}>
       <S.MessageBox visible={visible}>
-        <S.MessageMD>서로가 남이었던 시절, 둘은 생각했어요.</S.MessageMD>
+        <S.MessageMD>서로가 남이었던 시절,</S.MessageMD>
+        <S.MessageMD>둘은 생각했어요.</S.MessageMD>
         <S.BufferSM />
         <S.MessageSM>'저분은 운동을 매일 열심히 하시네.'</S.MessageSM>
         <S.MessageSM>'와, 저분 무게 엄청 치신다.'</S.MessageSM>
         <S.BufferSM />
         <S.MessageMD>매일 오며 가며 보다가,</S.MessageMD>
-        <S.MessageMD>인사도 하고 지내게 되고 뭐 그랬더랬죠.</S.MessageMD>
+        <S.MessageMD>인사도 하고 지내고 뭐 그랬더랬죠.</S.MessageMD>
         <S.BufferMD />
         <S.MessageMD>그런데 세상에,</S.MessageMD>
         <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐에요!</S.MessageMD>
