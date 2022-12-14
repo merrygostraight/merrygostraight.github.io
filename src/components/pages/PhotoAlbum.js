@@ -30,6 +30,20 @@ S.Wrapper = styled.div`
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 `;
+S.IntoduceWrap = styled.div`
+  margin-top: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+`;
+S.Intoduce = styled.div`
+  font-size: 0.9rem;
+  & > span {
+    font-size: 0.7rem;
+  }
+`;
 S.Gallery = styled.div`
   display: grid;
   gap: 6px;
@@ -119,19 +133,6 @@ S.HumanFace = styled.div`
 S.HumanName = styled.div`
   font-size: 0.7rem;
 `;
-S.IntoduceWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-`;
-S.Intoduce = styled.div`
-  font-size: 0.9rem;
-  & > span {
-    font-size: 0.7rem;
-  }
-`;
 
 const photos = [
   { title: 'photos0', image: photo00 },
@@ -188,18 +189,18 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
           <S.PhotoFrame src={selectedPhoto} />
         </S.PhotoPopup>
       )}
-      <S.InstagramArea visible={visible}>
-        <S.Human onClick={() => window.open("https://www.instagram.com/seunggyu9592", "_blank")}>
-          <S.HumanFace image={SgInstaImg} />
-          <S.HumanName>승규 인스타그램</S.HumanName>
-          <S.HumanName>구경가기</S.HumanName>
-        </S.Human>
-        <S.Human onClick={() => window.open("https://www.instagram.com/ma_entropy", "_blank")}>
-          <S.HumanFace image={JyInstaImg} />
-          <S.HumanName>주연 인스타그램</S.HumanName>
-          <S.HumanName>구경가기</S.HumanName>
-        </S.Human>
-      </S.InstagramArea>
+      {/*<S.InstagramArea visible={visible}>*/}
+      {/*  <S.Human onClick={() => window.open("https://www.instagram.com/seunggyu9592", "_blank")}>*/}
+      {/*    <S.HumanFace image={SgInstaImg} />*/}
+      {/*    <S.HumanName>승규 인스타그램</S.HumanName>*/}
+      {/*    <S.HumanName>구경가기</S.HumanName>*/}
+      {/*  </S.Human>*/}
+      {/*  <S.Human onClick={() => window.open("https://www.instagram.com/ma_entropy", "_blank")}>*/}
+      {/*    <S.HumanFace image={JyInstaImg} />*/}
+      {/*    <S.HumanName>주연 인스타그램</S.HumanName>*/}
+      {/*    <S.HumanName>구경가기</S.HumanName>*/}
+      {/*  </S.Human>*/}
+      {/*</S.InstagramArea>*/}
     </S.Wrapper>
   );
 }
