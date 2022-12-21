@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 import { toast } from 'react-toastify';
 import 'assets/styles/toastify.css';
-import { ACCOUNT_LIST } from 'constants/const';
+import { ACCOUNT_LIST_1, ACCOUNT_LIST_2 } from 'constants/const';
 
 const S = {};
 S.PopupOverlay = styled.div`
@@ -23,7 +23,7 @@ S.Popup = styled.div`
   z-index: 10;
   width: 70vw;
   max-width: 400px;
-  height: 20vh;
+  height: 16vh;
   max-height: 600px;
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -76,7 +76,7 @@ S.AccountCopyButton = styled.div`
   line-height: 1.5;
 `;
 
-function AccountPopup({ onClose }) {
+function AccountPopup({ onClose, category }) {
   const handleClickCopyAccount = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -97,12 +97,14 @@ function AccountPopup({ onClose }) {
     e.preventDefault();
   };
   
+  const ACCOUNT_LIST = category === 1 ? ACCOUNT_LIST_1 : ACCOUNT_LIST_2;
+  
   return (
     <S.PopupOverlay onClick={onClose}>
       <S.Popup>
         <S.Content>
           {ACCOUNT_LIST.map(({name, account}) => (
-            <S.AccountArea>
+            <S.AccountArea key={name}>
               <S.AccountInfoArea onClick={eventPreventDefault}>
                 <S.Name>{name}</S.Name>
                 <S.Account>{account}</S.Account>

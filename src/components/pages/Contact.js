@@ -80,6 +80,12 @@ S.MessageArea = styled.div`
   justify-content: center;
   align-items: center;
 `;
+S.AccountButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+`;
 S.AccountButton = styled.div`
   border: 1px dashed #29340b;
   padding: 4px 8px;
@@ -105,9 +111,9 @@ function Contact({ pageNum, disableSwipe }) {
     disableSwipe(false);
   };
   
-  const handleClickAccount = () => {
+  const handleClickAccount = (category) => {
     disableSwipe(true);
-    setOpenAccountPopup(true);
+    setOpenAccountPopup(category);
   };
   
   const closeAccountPopup = () => {
@@ -144,10 +150,13 @@ function Contact({ pageNum, disableSwipe }) {
           <div>마음이라도 전하고 싶으신 분들을 위해</div>
           <div>이곳에 계좌번호를 기재합니다</div>
         </S.MessageArea>
-        <S.AccountButton onClick={handleClickAccount}>계좌번호 보기</S.AccountButton>
+        <S.AccountButtonGroup>
+          <S.AccountButton onClick={() => handleClickAccount(1)}>신랑측 계좌번호 보기</S.AccountButton>
+          <S.AccountButton onClick={() => handleClickAccount(2)}>신부측 계좌번호 보기</S.AccountButton>
+        </S.AccountButtonGroup>
       </S.ContactAccount>
       {openTelPopup && <ContactPopup selectedPerson={selectedPerson} onClose={closeTelPopup} />}
-      {openAccountPopup && <AccountPopup onClose={closeAccountPopup} />}
+      {openAccountPopup && <AccountPopup category={openAccountPopup} onClose={closeAccountPopup} />}
     </S.Wrapper>
   );
 }

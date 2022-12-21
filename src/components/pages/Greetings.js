@@ -67,7 +67,7 @@ function Greetings({ pageNum }) {
         <S.MessageMD>인사도 하고 지내고 뭐 그랬더랬죠.</S.MessageMD>
         <S.BufferMD />
         <S.MessageMD>그런데 세상에,</S.MessageMD>
-        <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐에요!</S.MessageMD>
+        <S.MessageMD>둘이 함께 있으니 너무나 좋지 뭐예요!</S.MessageMD>
         <S.MessageMD>그래서 평생 함께 하기로 했답니다.</S.MessageMD>
         <S.MessageMD>저희 결혼합니다!</S.MessageMD>
         <S.MessageMD>부디 오셔서 함께 축하해 주세요 :)</S.MessageMD>

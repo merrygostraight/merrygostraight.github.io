@@ -38,7 +38,7 @@ export const FAMILY_INFO =  {
   },
 };
 
-export const ACCOUNT_LIST = [
+export const ACCOUNT_LIST_1 = [
   {
     name: '김승규',
     account: '기업 0000-000-000000',
@@ -47,6 +47,9 @@ export const ACCOUNT_LIST = [
     name: '김지룡',
     account: '국민 0000-000-000000',
   },
+];
+
+export const ACCOUNT_LIST_2 = [
   {
     name: '마주연',
     account: '우리 0000-000-000000',
