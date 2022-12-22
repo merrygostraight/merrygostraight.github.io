@@ -259,8 +259,8 @@
 .react-datepicker__year-text--selected,
 .react-datepicker__year-text--in-selecting-range,
 .react-datepicker__year-text--in-range {
-  border-radius: 50%;
-  background-color: #4d4d1a;
+  border-radius: 30%;
+  background-color: #5e5e22;
   color: #fff;
   font-weight: 700;
 }
@@ -393,6 +393,12 @@
   left: 15px;
 }
 
+.react-datepicker__day--weekend {
+  color: #b61848;
+}
 .react-datepicker__day--outside-month {
   color: #bbbbbb;
+}
+.react-datepicker__day--selected.react-datepicker__day--weekend {
+  color: #f8bbce;
 }

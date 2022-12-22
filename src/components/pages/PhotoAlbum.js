@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import photo00 from 'assets/gallery/wedding0.JPG'
-import photo01 from 'assets/gallery/wedding1.jpeg'
-import photo02 from 'assets/gallery/wedding2.jpeg'
-import photo03 from 'assets/gallery/wedding3.jpeg'
-import photo04 from 'assets/gallery/wedding4.jpeg'
-import photo05 from 'assets/gallery/wedding5.jpeg'
-import photo06 from 'assets/gallery/wedding6.jpeg'
 import JyInstaImg from 'assets/personal/jy_instagram.jpg'
 import SgInstaImg from 'assets/personal/sg_instagram.jpg'
+import { WEDDING_PHOTOS } from 'constants/const';
+import PhotoPopup from 'components/modules/PhotoPopup';
 
 const S = {};
 
@@ -77,72 +72,36 @@ S.Photo = styled.div`
     grid-row: 3 / 4;
   }
 `;
-S.PhotoPopup = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 4;
-`;
-S.Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.7;
-`;
-S.PhotoFrame = styled.img`
-  margin-top: -96px;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 2;
-`;
-S.InstagramArea = styled.div`
-  display: flex;
-  gap: 48px;
-  justify-content: center;
+// S.InstagramArea = styled.div`
+//   display: flex;
+//   gap: 48px;
+//   justify-content: center;
+//
+//   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
+//   opacity: ${({ visible }) => visible ? 1 : 0};
+//   transition:
+//     visibility 0.5s linear 0.5s,
+//     opacity 1.2s linear 1.5s;
+// `;
+// S.Human = styled.div`
+//   margin-top: 12px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// `;
+// S.HumanFace = styled.div`
+//   border-radius: 50%;
+//   width: 50px;
+//   height: 50px;
+//   margin-bottom: 16px;
+//   background: url(${({ image }) => image}) no-repeat center;
+//   background-size: cover;
+// `;
+// S.HumanName = styled.div`
+//   font-size: 0.7rem;
+// `;
 
-  visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
-  opacity: ${({ visible }) => visible ? 1 : 0};
-  transition:
-    visibility 0.5s linear 0.5s,
-    opacity 1.2s linear 1.5s;
-`;
-S.Human = styled.div`
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-S.HumanFace = styled.div`
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 16px;
-  background: url(${({ image }) => image}) no-repeat center;
-  background-size: cover;
-`;
-S.HumanName = styled.div`
-  font-size: 0.7rem;
-`;
-
-const photos = [
-  { title: 'photos0', image: photo00 },
-  { title: 'photos1', image: photo01 },
-  { title: 'photos2', image: photo02 },
-  { title: 'photos3', image: photo03 },
-  { title: 'photos4', image: photo04 },
-  { title: 'photos5', image: photo05 },
-  { title: 'photos6', image: photo06 },
-];
 
 function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
   const visible = pageNum === 3;
@@ -160,7 +119,7 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
       return;
     }
 
-    const { image } = photos[index];
+    const { image } = WEDDING_PHOTOS[index];
     setSelectedPhoto(image);
     showPagination(false);
     disableSwipe(true);
@@ -173,7 +132,7 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
         <S.Intoduce>마재언 백경숙 <span>의 딸</span> 주연</S.Intoduce>
       </S.IntoduceWrap>
       <S.Gallery>
-        {photos.map(({ title, image }, index) => (
+        {WEDDING_PHOTOS.map(({ title, image }, index) => (
           <S.Photo
             visible={visible}
             key={title}
@@ -183,12 +142,7 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
           />
         ))}
       </S.Gallery>
-      {selectedPhoto !== null && (
-        <S.PhotoPopup onClick={closePhotoPopup}>
-          <S.Overlay />
-          <S.PhotoFrame src={selectedPhoto} />
-        </S.PhotoPopup>
-      )}
+      <PhotoPopup selectedPhoto={selectedPhoto} closePhotoPopup={closePhotoPopup} />
       {/*<S.InstagramArea visible={visible}>*/}
       {/*  <S.Human onClick={() => window.open("https://www.instagram.com/seunggyu9592", "_blank")}>*/}
       {/*    <S.HumanFace image={SgInstaImg} />*/}

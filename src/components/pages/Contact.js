@@ -109,6 +109,7 @@ function Contact({ pageNum, disableSwipe }) {
   const closeTelPopup = () => {
     setOpenTelPopup(false);
     disableSwipe(false);
+    setSelectedPerson({});
   };
   
   const handleClickAccount = (category) => {

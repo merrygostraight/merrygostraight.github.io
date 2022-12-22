@@ -1,5 +1,5 @@
 /* global kakao */
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BgImageDate from 'assets/backgrounds/date_bg.jpeg';
@@ -7,6 +7,7 @@ import Calendar from 'components/modules/Calendar';
 import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 import { toast } from 'react-toastify';
 import 'assets/styles/toastify.css';
+import PublicTransportPopup from 'components/modules/PublicTransportPopup';
 const { kakao } = window;
 
 const S = {};
@@ -45,33 +46,50 @@ S.MessageBox = styled.div`
 `;
 S.MessageTitle = styled.div`
   font-size: 1rem;
-  margin: 12px 0 8px 0;
+  margin-top: 4px;
 `;
 S.MessageLocation = styled.div`
 `;
 S.Address = styled.div`
   margin-bottom: 2px;
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+S.AddressButtonGroup = styled.div`
+  display: flex;
+  gap: 16px;
   justify-content: center;
   align-items: center;
 `;
 S.AddressMessage = styled.div`
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1rem;
 `;
 S.AddressCopyButton = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 4px 3px 3px 3px;
-  height: 0.9rem;
-  line-height: 0.9rem;
+  height: 1rem;
+  line-height: 1rem;
   color: #29340b;
   font-weight: 500;
   border-radius: 4px;
-  border: 1px solid #29340b;
+  border: 1px dashed #29340b;
+`;
+S.TransportButton = styled.div`
+  font-size: 0.9rem;
+  padding: 4px 3px 3px 3px;
+  height: 1rem;
+  line-height: 1rem;
+  color: #29340b;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px dashed #29340b;
 `;
 S.MessageDate = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 24px;
   margin-bottom: 6px;
 `;
@@ -85,7 +103,7 @@ S.Map = styled.div`
   transition: transform 0.5s linear 1s;
 `;
 S.MessageMapAlt = styled.div`
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 `;
 S.MapNaver = styled.div`
   display: flex;
@@ -100,11 +118,11 @@ S.MapNaverMessage = styled.div`
   padding-top: 2px;
 `;
 S.MapNaverButton = styled.div`
-  background-color: #29340b;
+  background-color: #4c640d;
   color: #ffffff;
   font-weight: 500;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 5px 4px 4px 4px;
   height: 1rem;
   line-height: 1rem;
@@ -119,6 +137,7 @@ const kakaoMapUrl = 'https://map.kakao.com/?sName=&eName=고려대학교%20교�
 
 function LocationAndDate({ pageNum, disableSwipe }) {
   const visible = pageNum === 4;
+  const [showTransportPopup, setShowTransportPopup] = useState(false);
   const mapRef = useRef();
   
   useEffect(() => {
@@ -149,6 +168,14 @@ function LocationAndDate({ pageNum, disableSwipe }) {
       theme: "light",
     });
   };
+  const handleClickTransportButton = () => {
+    setShowTransportPopup(true);
+    disableSwipe(true);
+  };
+  const closeTransportPopup = () => {
+    setShowTransportPopup(false);
+    disableSwipe(false);
+  };
   
   return (
     <S.Wrapper visible={visible}>
@@ -161,9 +188,12 @@ function LocationAndDate({ pageNum, disableSwipe }) {
         <S.MessageLocation>고려대학교 교우회관</S.MessageLocation>
         <S.Address>
           <S.AddressMessage>서울 성북구 종암로 13</S.AddressMessage>
-          <CopyToClipboard text="서울 성북구 종암로 13">
-            <S.AddressCopyButton onClick={handleClickCopyAddr}>주소 복사</S.AddressCopyButton>
-          </CopyToClipboard>
+          <S.AddressButtonGroup>
+              <CopyToClipboard text="서울 성북구 종암로 13">
+                <S.AddressCopyButton onClick={handleClickCopyAddr}>주소 복사</S.AddressCopyButton>
+              </CopyToClipboard>
+              <S.TransportButton onClick={handleClickTransportButton}>교통편 보기</S.TransportButton>
+          </S.AddressButtonGroup>
         </S.Address>
         <S.Map
           visible={visible}
@@ -177,10 +207,11 @@ function LocationAndDate({ pageNum, disableSwipe }) {
         <S.MapNaver>
           <S.MapNaverMessage>네이버 지도에서 보기 </S.MapNaverMessage>
           <S.MapNaverButton onClick={() => window.open(`${naverMapUrl}`, "_blank")}>
-            Naver 지도
+            NAVER 지도
           </S.MapNaverButton>
         </S.MapNaver>
       </S.MessageBox>
+      { showTransportPopup && <PublicTransportPopup onClose={closeTransportPopup}>교통편 보기</PublicTransportPopup>}
     </S.Wrapper>
   );
 }
