@@ -190,9 +190,9 @@ function LocationAndDate({ pageNum, disableSwipe }) {
           <S.AddressMessage>서울 성북구 종암로 13</S.AddressMessage>
           <S.AddressButtonGroup>
               <CopyToClipboard text="서울 성북구 종암로 13">
-                <S.AddressCopyButton onClick={handleClickCopyAddr}>주소 복사</S.AddressCopyButton>
+                <S.AddressCopyButton onClick={handleClickCopyAddr}>주소 복사하기</S.AddressCopyButton>
               </CopyToClipboard>
-              <S.TransportButton onClick={handleClickTransportButton}>교통편 보기</S.TransportButton>
+              <S.TransportButton onClick={handleClickTransportButton}>교통편 자세히 보기</S.TransportButton>
           </S.AddressButtonGroup>
         </S.Address>
         <S.Map
