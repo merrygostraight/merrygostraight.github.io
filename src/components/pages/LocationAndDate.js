@@ -53,7 +53,7 @@ S.MessageLocation = styled.div`
 S.Address = styled.div`
   margin-bottom: 2px;
   display: flex;
-  gap: 8px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -70,7 +70,7 @@ S.AddressMessage = styled.div`
 `;
 S.AddressCopyButton = styled.div`
   font-size: 0.9rem;
-  padding: 4px 3px 3px 3px;
+  padding: 6px 5px 5px 5px;
   height: 1rem;
   line-height: 1rem;
   color: #29340b;
@@ -80,7 +80,7 @@ S.AddressCopyButton = styled.div`
 `;
 S.TransportButton = styled.div`
   font-size: 0.9rem;
-  padding: 4px 3px 3px 3px;
+  padding: 6px 5px 5px 5px;
   height: 1rem;
   line-height: 1rem;
   color: #29340b;

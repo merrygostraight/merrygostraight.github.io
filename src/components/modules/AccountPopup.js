@@ -25,7 +25,7 @@ S.Popup = styled.div`
   max-width: 400px;
   height: 16vh;
   max-height: 600px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,8 @@ S.AccountArea = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
-  background-color: #dddddd;
+  background-color: #fff7e3;
+  padding: 4px 6px;
 `;
 S.AccountInfoArea = styled.div`
   display: flex;
@@ -59,7 +60,7 @@ S.AccountInfoArea = styled.div`
   border-radius: 4px;
   font-size: 0.8rem;
   gap: 10px;
-  padding: 6px 8px;
+  padding: 4px 6px;
 `;
 S.Name = styled.div`
 
@@ -69,7 +70,7 @@ S.Account = styled.div`
 `;
 S.AccountCopyButton = styled.div`
   border: 1px dashed #29340b;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 2px 4px;
   border-radius: 4px;
   font-size: 0.8rem;
