@@ -105,24 +105,33 @@ S.Photo = styled.div`
 
 function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
   const visible = pageNum === 3;
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(-1);
   
   const closePhotoPopup = () => {
-    setSelectedPhoto(null);
+    setSelectedPhotoIndex(-1);
     showPagination(true);
     disableSwipe(false);
   };
   
   const handleClickImage = (index) => {
-    if (selectedPhoto !== null) {
-      closePhotoPopup();
-      return;
-    }
-
-    const { image } = WEDDING_PHOTOS[index];
-    setSelectedPhoto(image);
+    setSelectedPhotoIndex(index);
     showPagination(false);
     disableSwipe(true);
+  };
+  
+  const nextSelectedPhoto = () => {
+    if (selectedPhotoIndex === WEDDING_PHOTOS.length - 1) {
+      setSelectedPhotoIndex(0);
+    } else {
+      setSelectedPhotoIndex((selectedPhotoIndex) => selectedPhotoIndex + 1);
+    }
+  };
+  const prevSelectedPhoto = () => {
+    if (selectedPhotoIndex === 0) {
+      setSelectedPhotoIndex(WEDDING_PHOTOS.length - 1);
+    } else {
+      setSelectedPhotoIndex((selectedPhotoIndex) => selectedPhotoIndex - 1);
+    }
   };
   
   return (
@@ -142,7 +151,12 @@ function PhotoAlbum({ pageNum, showPagination, disableSwipe }) {
           />
         ))}
       </S.Gallery>
-      <PhotoPopup selectedPhoto={selectedPhoto} closePhotoPopup={closePhotoPopup} />
+      <PhotoPopup
+        selectedPhotoIndex={selectedPhotoIndex}
+        nextSelectedPhoto={nextSelectedPhoto}
+        prevSelectedPhoto={prevSelectedPhoto}
+        closePhotoPopup={closePhotoPopup}
+      />
       {/*<S.InstagramArea visible={visible}>*/}
       {/*  <S.Human onClick={() => window.open("https://www.instagram.com/seunggyu9592", "_blank")}>*/}
       {/*    <S.HumanFace image={SgInstaImg} />*/}
