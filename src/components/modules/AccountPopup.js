@@ -41,7 +41,7 @@ S.Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #29340b;
+  color: #232d06;
   gap: 12px;
 `;
 S.AccountArea = styled.div`
@@ -62,12 +62,9 @@ S.AccountInfoArea = styled.div`
   gap: 10px;
   padding: 4px 6px;
 `;
-S.Name = styled.div`
-
-`;
-S.Account = styled.div`
-
-`;
+S.Name = styled.div``;
+S.Account = styled.div``;
+S.Divider = styled.div``;
 S.AccountCopyButton = styled.div`
   border: 1px dashed #29340b;
   background-color: #ffffff;
@@ -108,6 +105,7 @@ function AccountPopup({ onClose, category }) {
             <S.AccountArea key={name}>
               <S.AccountInfoArea onClick={eventPreventDefault}>
                 <S.Name>{name}</S.Name>
+                <S.Divider>︎∙</S.Divider>
                 <S.Account>{account}</S.Account>
               </S.AccountInfoArea>
               <CopyToClipboard text={account}>

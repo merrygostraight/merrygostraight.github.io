@@ -48,22 +48,26 @@ export const FAMILY_INFO =  {
 export const ACCOUNT_LIST_1 = [
   {
     name: '김승규',
-    account: '기업 0000-000-000000',
+    account: '농협 352-1135-6221-23',
   },
   {
     name: '김지룡',
-    account: '국민 0000-000-000000',
+    account: '하나 391-810767-17407',
   },
 ];
 
 export const ACCOUNT_LIST_2 = [
   {
     name: '마주연',
-    account: '우리 0000-000-000000',
+    account: '우리 1002-580-279799',
   },
   {
     name: '마재언',
-    account: '농협 0000-000-000000',
+    account: '농협 676-12-217077',
+  },
+  {
+    name: '백경숙',
+    account: '농협 477-12-188300',
   },
 ];
 
