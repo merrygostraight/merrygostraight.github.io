@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.af9a5855.css",
-    "main.js": "/static/js/main.bafe105c.js",
+    "main.js": "/static/js/main.94660aaa.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
     "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
     "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
@@ -28,11 +28,11 @@
     "index.html": "/index.html",
     "static/media/close_x.svg": "/static/media/close_x.5c0b2070aadddf8f08b680cd37013c9e.svg",
     "main.af9a5855.css.map": "/static/css/main.af9a5855.css.map",
-    "main.bafe105c.js.map": "/static/js/main.bafe105c.js.map",
+    "main.94660aaa.js.map": "/static/js/main.94660aaa.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.af9a5855.css",
-    "static/js/main.bafe105c.js"
+    "static/js/main.94660aaa.js"
   ]
 }
