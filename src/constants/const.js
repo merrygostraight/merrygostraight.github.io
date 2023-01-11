@@ -47,10 +47,6 @@ export const FAMILY_INFO =  {
 
 export const ACCOUNT_LIST_1 = [
   {
-    name: '김승규',
-    account: '농협 352-1135-6221-23',
-  },
-  {
     name: '김지룡',
     account: '하나 391-810767-17407',
   },
