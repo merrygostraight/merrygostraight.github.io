@@ -18,10 +18,10 @@ S.Main = styled.div`
 
 const pageList = [
   { index: 1, category: '커버' },
-  { index: 2, category: '인사말' },
-  { index: 3, category: '장소와 시간' },
-  { index: 4, category: '사진' },
-  { index: 5, category: '혼주 연락처' },
+  { index: 2, category: '인사' },
+  { index: 3, category: '사진' },
+  { index: 4, category: '예식' },
+  { index: 5, category: '연락' },
 ];
 
 function Main() {

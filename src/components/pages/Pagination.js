@@ -6,7 +6,7 @@ const S = {};
 S.Wrapper = styled.div`
   position: fixed;
   top: 0;
-  right: 4px;
+  right: 0;
   height: 100%;
   display: flex;
   overflow: hidden;
@@ -14,53 +14,44 @@ S.Wrapper = styled.div`
   align-items: center;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
-  transition: visibility 0.5s linear 0.3s, opacity 0.5s linear 0.3s;
+  transition: visibility 0.5s linear 0.5s, opacity 0.5s linear 1.5s;
 `;
 S.DotsGroup = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  width: 1.3rem;
+  align-items: flex-end;
+  width: 32px;
   height: 240px;
   position: relative;
+  font-size: 12px;
+  line-height: 26px;
+  color: rgba(41, 52, 11, 0.6);
 `;
 S.Dots = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #aaaaaa;
-  visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
-  opacity: ${({ visible }) => visible ? 0.3 : 0};
-  transition: visibility 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
-`;
-S.DotHighLight = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  opacity: 0.3;
-  background-color: #AD5B78;
-  position: absolute;
-  top: ${({ pageNum }) => 14+(pageNum-1)*48}px;
-  transition: top 0.3s linear 0.5s, opacity 0.3s linear 0.5s;
+  width: ${({ selected }) => selected ? '28px' : '24px'};
+  height: 24px;
+  border-radius: 4px;
+  background-color: ${({ selected }) => selected ? 'rgba(173,91,120,0.3)' : 'rgba(170,170,170,0.3)'};
+  padding-left: ${({ selected }) => selected ? '4px' : '0'};
+  transition: width 0.3s linear 0.3s, background-color 0.3s linear 0.3s, padding-left 0.3s linear 0.3s;
 `;
 
 function Pagination({ pageNum, pages, setPageNum }) {
   return (
     <S.Wrapper visible={pageNum > 1}>
-      <S.DotsGroup>
+      <S.DotsGroup visible={pageNum > 1}>
       {
         pages.map(({ index, category }) => (
           <S.Dots
             key={index}
             pageNum={index}
             title={category}
-            visible={pageNum !== index}
+            selected={pageNum === index}
             onClick={() => setPageNum(index)}
-          />
+          >{category}</S.Dots>
         ))
       }
-      <S.DotHighLight pageNum={pageNum} />
       </S.DotsGroup>
     </S.Wrapper>
   );
