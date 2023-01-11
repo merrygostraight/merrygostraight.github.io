@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.af9a5855.css",
-    "main.js": "/static/js/main.73f56f23.js",
+    "main.js": "/static/js/main.8556d804.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
     "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
     "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
@@ -21,16 +21,18 @@
     "static/media/jy_mother.jpg": "/static/media/jy_mother.9b978d694edf13395888.jpg",
     "static/media/contact_bg.jpeg": "/static/media/contact_bg.691f7054787413a13cfb.jpeg",
     "static/media/jy_father.jpg": "/static/media/jy_father.e3267aeb14cd3ce657c3.jpg",
+    "static/media/swipe_hand_icon.svg": "/static/media/swipe_hand_icon.d3092a6f4070cdbfa4fd57012c69c2cc.svg",
+    "static/media/swipe_up_icon.svg": "/static/media/swipe_up_icon.f1d4441f8504329a3520dd5376c8926a.svg",
     "static/media/arrow_next.svg": "/static/media/arrow_next.457e318890220fbb054c13fb248f5395.svg",
     "static/media/arrow_prev.svg": "/static/media/arrow_prev.9379bd507ec24aa59a7518662e901ad9.svg",
     "index.html": "/index.html",
     "static/media/close_x.svg": "/static/media/close_x.5c0b2070aadddf8f08b680cd37013c9e.svg",
     "main.af9a5855.css.map": "/static/css/main.af9a5855.css.map",
-    "main.73f56f23.js.map": "/static/js/main.73f56f23.js.map",
+    "main.8556d804.js.map": "/static/js/main.8556d804.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.af9a5855.css",
-    "static/js/main.73f56f23.js"
+    "static/js/main.8556d804.js"
   ]
 }
