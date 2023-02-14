@@ -23,7 +23,7 @@ S.PopupOverlay = styled.div`
 `;
 S.Popup = styled.div`
   z-index: 10;
-  width: 80vw;
+  width: 80%;
   max-width: 400px;
   background-color: #ffffff;
   border-radius: 8px;

@@ -22,17 +22,14 @@ S.PopupOverlay = styled.div`
 `;
 S.Popup = styled.div`
   z-index: 10;
-  width: 70vw;
-  max-width: 400px;
-  height: 20vh;
-  max-height: 600px;
+  width: 296px;
   background-color: #f0f0f0;
   border-radius: 8px;
   margin-top: -96px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 12px 6px 6px 6px;
+  padding: 16px 6px;
   justify-content: center;
   align-items: center;
 `;
