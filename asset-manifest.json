@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.99d964a3.css",
-    "main.js": "/static/js/main.536dc72b.js",
+    "main.js": "/static/js/main.514ba7d2.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
+    "static/media/bus_from_daejeon_pic.png": "/static/media/bus_from_daejeon_pic.ce44650697b73955b609.png",
     "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
     "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
     "static/media/wedding2.jpeg": "/static/media/wedding2.7a3e796c4fbfd8e26702.jpeg",
@@ -11,6 +12,7 @@
     "static/media/wedding0.JPG": "/static/media/wedding0.a6e33af9fedaa63671cb.JPG",
     "static/media/wedding4.jpeg": "/static/media/wedding4.71ce1fec428add2d594f.jpeg",
     "static/media/cover_bg.jpeg": "/static/media/cover_bg.fe9812b60df519f85fc6.jpeg",
+    "static/media/bus_from_daejeon_location.png": "/static/media/bus_from_daejeon_location.cd9619f8d86f62b76aa1.png",
     "static/media/greetings_bg.jpeg": "/static/media/greetings_bg.cd7be07176d8ad35ae0d.jpeg",
     "static/media/sg_instagram.jpg": "/static/media/sg_instagram.3b0bee0694696c2c976b.jpg",
     "static/media/jy_instagram.jpg": "/static/media/jy_instagram.9d353b371525e03ff227.jpg",
@@ -28,11 +30,11 @@
     "index.html": "/index.html",
     "static/media/close_x.svg": "/static/media/close_x.5c0b2070aadddf8f08b680cd37013c9e.svg",
     "main.99d964a3.css.map": "/static/css/main.99d964a3.css.map",
-    "main.536dc72b.js.map": "/static/js/main.536dc72b.js.map",
+    "main.514ba7d2.js.map": "/static/js/main.514ba7d2.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99d964a3.css",
-    "static/js/main.536dc72b.js"
+    "static/js/main.514ba7d2.js"
   ]
 }
