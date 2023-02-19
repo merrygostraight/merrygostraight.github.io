@@ -63,7 +63,7 @@ S.Name = styled.div``;
 S.Account = styled.div``;
 S.Divider = styled.div``;
 S.AccountCopyButton = styled.div`
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
   background-color: #ffffff;
   padding: 2px 4px;
   border-radius: 4px;

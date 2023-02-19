@@ -74,11 +74,11 @@ const swipeKeyframes = keyframes`
     transform: translateY(-20px);
     opacity: 0.6;
   }
-  50% {
+  60% {
     transform: translateY(-20px);
     opacity: 0.6;
   }
-  60%, 100% {
+  80%, 100% {
     opacity: 0;
   }
 `;
@@ -103,7 +103,7 @@ S.SwipeIcon = styled.div`
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
-  animation: ${swipeKeyframes} 4s 0s infinite;
+  animation: ${swipeKeyframes} 3s 0s infinite;
 `;
 
 function Cover({ pageNum }) {

@@ -29,10 +29,14 @@ S.DotsGroup = styled.div`
   color: rgba(41, 52, 11, 0.6);
 `;
 S.Dots = styled.div`
-  width: ${({ selected }) => selected ? '28px' : '24px'};
-  height: 24px;
+  //width: ${({ selected }) => selected ? '28px' : '24px'};
+  width: 28px;
+  height: 28px;
+  line-height: 30px;
   border-radius: 4px;
-  background-color: ${({ selected }) => selected ? 'rgba(173,91,120,0.3)' : 'rgba(170,170,170,0.3)'};
+  font-size: 14px;
+  color: #111701;
+  background-color: ${({ selected }) => selected ? 'rgba(173,91,120,0.2)' : 'rgba(170,170,170,0.2)'};
   padding-left: ${({ selected }) => selected ? '4px' : '0'};
   transition: width 0.3s linear 0.3s, background-color 0.3s linear 0.3s, padding-left 0.3s linear 0.3s;
 `;

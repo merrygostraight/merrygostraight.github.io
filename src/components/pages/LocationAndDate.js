@@ -8,6 +8,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 import { toast } from 'react-toastify';
 import 'assets/styles/toastify.css';
 import PublicTransportPopup from 'components/modules/PublicTransportPopup';
+import BusFromDaejeonPopup from 'components/modules/BusFromDaejeonPopup';
 const { kakao } = window;
 
 const S = {};
@@ -41,7 +42,7 @@ S.MessageBox = styled.div`
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
   opacity: ${({ visible }) => visible ? 1 : 0};
   transition: visibility 0.5s linear 1s, opacity 0.5s linear 1s;
-  color: #29340b;
+  color: #111701;
   font-size: 1.2rem;
 `;
 S.MessageTitle = styled.div`
@@ -53,7 +54,7 @@ S.MessageLocation = styled.div`
 S.Address = styled.div`
   margin-bottom: 2px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -73,25 +74,32 @@ S.AddressCopyButton = styled.div`
   padding: 6px 5px 5px 5px;
   height: 1rem;
   line-height: 1rem;
-  color: #29340b;
+  color: #111701;
   font-weight: 500;
   border-radius: 4px;
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
 `;
 S.TransportButton = styled.div`
   font-size: 0.9rem;
   padding: 6px 5px 5px 5px;
   height: 1rem;
   line-height: 1rem;
-  color: #29340b;
+  color: #111701;
   font-weight: 500;
   border-radius: 4px;
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
 `;
 S.MessageDate = styled.div`
   font-size: 1.1rem;
-  margin-top: 24px;
-  margin-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+`;
+S.MapArea = styled.div`
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 S.Map = styled.div`
   width: 60vw;
@@ -138,6 +146,7 @@ const kakaoMapUrl = 'https://map.kakao.com/?sName=&eName=고려대학교%20교�
 function LocationAndDate({ pageNum, disableSwipe }) {
   const visible = pageNum === 4;
   const [showTransportPopup, setShowTransportPopup] = useState(false);
+  const [showBusFromDaejeonPopup, setShowBusFromDaejeonPopup] = useState(false);
   const mapRef = useRef();
   
   useEffect(() => {
@@ -168,12 +177,22 @@ function LocationAndDate({ pageNum, disableSwipe }) {
       theme: "light",
     });
   };
+
   const handleClickTransportButton = () => {
     setShowTransportPopup(true);
     disableSwipe(true);
   };
   const closeTransportPopup = () => {
     setShowTransportPopup(false);
+    disableSwipe(false);
+  };
+  
+  const handleClickBusFromDaejeonButton = () => {
+    setShowBusFromDaejeonPopup(true);
+    disableSwipe(true);
+  };
+  const closeBusFromDaejeonPopup = () => {
+    setShowBusFromDaejeonPopup(false);
     disableSwipe(false);
   };
   
@@ -194,24 +213,30 @@ function LocationAndDate({ pageNum, disableSwipe }) {
               </CopyToClipboard>
               <S.TransportButton onClick={handleClickTransportButton}>교통편 자세히 보기</S.TransportButton>
           </S.AddressButtonGroup>
+          <S.AddressButtonGroup>
+            <S.TransportButton onClick={handleClickBusFromDaejeonButton}>대전에서 출발하는 전세버스 안내</S.TransportButton>
+          </S.AddressButtonGroup>
         </S.Address>
-        <S.Map
-          visible={visible}
-          id="map"
-          ref={mapRef}
-          onTouchStart={handleMapTouchStart}
-          onTouchEnd={handleMapTouchEnd}
-          onClick={() => window.open(`${kakaoMapUrl}`, "_blank")}
-        />
-        <S.MessageMapAlt>지도를 탭하시면 카카오맵으로 이동합니다</S.MessageMapAlt>
-        <S.MapNaver>
-          <S.MapNaverMessage>네이버 지도에서 보기 </S.MapNaverMessage>
-          <S.MapNaverButton onClick={() => window.open(`${naverMapUrl}`, "_blank")}>
-            NAVER 지도
-          </S.MapNaverButton>
-        </S.MapNaver>
+        <S.MapArea>
+          <S.Map
+            visible={visible}
+            id="map"
+            ref={mapRef}
+            onTouchStart={handleMapTouchStart}
+            onTouchEnd={handleMapTouchEnd}
+            onClick={() => window.open(`${kakaoMapUrl}`, "_blank")}
+          />
+          <S.MessageMapAlt>지도를 탭하시면 카카오맵으로 이동합니다</S.MessageMapAlt>
+          <S.MapNaver>
+            <S.MapNaverMessage>네이버 지도에서 보기 </S.MapNaverMessage>
+            <S.MapNaverButton onClick={() => window.open(`${naverMapUrl}`, "_blank")}>
+              NAVER 지도
+            </S.MapNaverButton>
+          </S.MapNaver>
+        </S.MapArea>
       </S.MessageBox>
-      { showTransportPopup && <PublicTransportPopup onClose={closeTransportPopup}>교통편 보기</PublicTransportPopup>}
+      { showTransportPopup && <PublicTransportPopup onClose={closeTransportPopup} />}
+      { showBusFromDaejeonPopup && <BusFromDaejeonPopup onClose={closeBusFromDaejeonPopup} />}
     </S.Wrapper>
   );
 }

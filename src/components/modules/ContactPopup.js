@@ -34,7 +34,7 @@ S.Popup = styled.div`
   align-items: center;
 `;
 S.ContactInfoArea = styled.div`
-  color: #29340b;
+  color: #111701;
   display: flex;
   align-items: center;
   width: 100%;
@@ -42,14 +42,14 @@ S.ContactInfoArea = styled.div`
   font-size: 0.8rem;
 `;
 S.CopyButton = styled.div`
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
   padding: 3px 4px;
   border-radius: 4px;
 `;
 S.Tel = styled.div`
 `;
 S.Call = styled.div`
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
   padding: 3px 4px;
   border-radius: 4px;
 `;

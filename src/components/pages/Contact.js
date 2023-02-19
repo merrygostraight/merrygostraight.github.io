@@ -14,13 +14,13 @@ S.Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  gap: 72px;
+  gap: 60px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #29340b;
+  color: #111701;
   background: url(${BgImageGreeting}) no-repeat center;
   background-size: cover;
   visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
@@ -46,7 +46,7 @@ S.FamillyArea = styled.div`
   justify-content: center;
   align-items: center;
   gap: 36px;
-  margin-top: 36px;
+  margin-top: 24px;
 `;
 S.Family = styled.div`
   display: flex;
@@ -87,7 +87,7 @@ S.AccountButtonGroup = styled.div`
   gap: 12px;
 `;
 S.AccountButton = styled.div`
-  border: 1px dashed #29340b;
+  border: 1px dashed #111701;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.9rem;

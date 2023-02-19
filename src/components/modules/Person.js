@@ -11,7 +11,7 @@ S.Person = styled.div`
   gap: 8px;
 `;
 S.Name = styled.div`
-  color: #29340b;
+  color: #111701;
   font-size: 0.7rem;
 `;
 S.Face = styled.div`
