@@ -62,15 +62,6 @@ S.Photo = styled.div`
   transition:
     visibility 0.5s linear 0.5s,
     opacity 1.2s linear ${({ index }) => 0.5+index*0.1}s;
-
-  &:nth-child(1) {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-  }
-  &:nth-child(7) {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
-  }
 `;
 // S.InstagramArea = styled.div`
 //   display: flex;
