@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.99d964a3.css",
-    "main.js": "/static/js/main.aaea4ff0.js",
+    "main.js": "/static/js/main.26763ab1.js",
     "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
-    "static/media/wedding5.jpeg": "/static/media/wedding5.ed87a90f58ed37d49fdd.jpeg",
-    "static/media/wedding1.jpeg": "/static/media/wedding1.4603473a88ff6c41ba77.jpeg",
-    "static/media/wedding2.jpeg": "/static/media/wedding2.7a3e796c4fbfd8e26702.jpeg",
-    "static/media/wedding6.jpeg": "/static/media/wedding6.96f581084179d1751f50.jpeg",
-    "static/media/wedding3.jpeg": "/static/media/wedding3.4b77db16f9db67e2abe4.jpeg",
+    "static/media/wedding6.jpeg": "/static/media/wedding6.ed87a90f58ed37d49fdd.jpeg",
+    "static/media/wedding5.jpeg": "/static/media/wedding5.4603473a88ff6c41ba77.jpeg",
+    "static/media/wedding3.jpeg": "/static/media/wedding3.7a3e796c4fbfd8e26702.jpeg",
+    "static/media/wedding7.jpeg": "/static/media/wedding7.96f581084179d1751f50.jpeg",
+    "static/media/wedding2.jpeg": "/static/media/wedding2.4b77db16f9db67e2abe4.jpeg",
     "static/media/wedding0.JPG": "/static/media/wedding0.a6e33af9fedaa63671cb.JPG",
-    "static/media/wedding4.jpeg": "/static/media/wedding4.71ce1fec428add2d594f.jpeg",
+    "static/media/wedding4.JPG": "/static/media/wedding4.66ffd9d95debfeabdceb.JPG",
+    "static/media/wedding1.jpeg": "/static/media/wedding1.71ce1fec428add2d594f.jpeg",
+    "static/media/wedding8.JPG": "/static/media/wedding8.2439a01e405f2d8bf402.JPG",
     "static/media/cover_bg.jpeg": "/static/media/cover_bg.fe9812b60df519f85fc6.jpeg",
     "static/media/bus_from_daejeon_pic.png": "/static/media/bus_from_daejeon_pic.f8dc9e540f88ec770041.png",
     "static/media/greetings_bg.jpeg": "/static/media/greetings_bg.cd7be07176d8ad35ae0d.jpeg",
@@ -30,11 +32,11 @@
     "index.html": "/index.html",
     "static/media/close_x.svg": "/static/media/close_x.5c0b2070aadddf8f08b680cd37013c9e.svg",
     "main.99d964a3.css.map": "/static/css/main.99d964a3.css.map",
-    "main.aaea4ff0.js.map": "/static/js/main.aaea4ff0.js.map",
+    "main.26763ab1.js.map": "/static/js/main.26763ab1.js.map",
     "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99d964a3.css",
-    "static/js/main.aaea4ff0.js"
+    "static/js/main.26763ab1.js"
   ]
 }
