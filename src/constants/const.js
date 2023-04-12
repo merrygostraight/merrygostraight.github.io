@@ -18,32 +18,32 @@ export const FAMILY_INFO =  {
   SG: {
     image: SgFace,
     name: "신랑 김승규",
-    tel: '010-2634-5307',
+    tel: '010-0000-0000',
   },
   SG_FATHER: {
     image: SgFatherFace,
     name: "아버지 김지룡",
-    tel: '010-5433-1744',
+    tel: '010-0000-0000',
   },
   SG_MOTHER: {
     image: SgMotherFace,
     name: "어머니 이경우",
-    tel: '010-8833-5307',
+    tel: '010-0000-0000',
   },
   JY: {
     image: JyFace,
     name: "신부 마주연",
-    tel: '010-9127-9799',
+    tel: '010-0000-0000',
   },
   JY_FATHER: {
     image: JyFatherFace,
     name: "아버지 마재언",
-    tel: '010-3686-4382',
+    tel: '010-0000-0000',
   },
   JY_MOTHER: {
     image: JyMotherFace,
     name: "어머니 백경숙",
-    tel: '010-9500-7549',
+    tel: '010-0000-0000',
   },
 };
 
