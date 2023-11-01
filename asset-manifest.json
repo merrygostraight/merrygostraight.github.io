@@ -1,42 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.99d964a3.css",
-    "main.js": "/static/js/main.ab78cadb.js",
-    "static/js/787.0c9ea871.chunk.js": "/static/js/787.0c9ea871.chunk.js",
-    "static/media/wedding6.jpeg": "/static/media/wedding6.ed87a90f58ed37d49fdd.jpeg",
-    "static/media/wedding5.jpeg": "/static/media/wedding5.4603473a88ff6c41ba77.jpeg",
-    "static/media/wedding3.jpeg": "/static/media/wedding3.7a3e796c4fbfd8e26702.jpeg",
-    "static/media/wedding7.jpeg": "/static/media/wedding7.96f581084179d1751f50.jpeg",
-    "static/media/wedding2.jpeg": "/static/media/wedding2.4b77db16f9db67e2abe4.jpeg",
-    "static/media/wedding0.JPG": "/static/media/wedding0.a6e33af9fedaa63671cb.JPG",
-    "static/media/wedding4.JPG": "/static/media/wedding4.66ffd9d95debfeabdceb.JPG",
-    "static/media/wedding1.jpeg": "/static/media/wedding1.71ce1fec428add2d594f.jpeg",
-    "static/media/wedding8.JPG": "/static/media/wedding8.2439a01e405f2d8bf402.JPG",
-    "static/media/cover_bg.jpeg": "/static/media/cover_bg.fe9812b60df519f85fc6.jpeg",
-    "static/media/bus_from_daejeon_pic.png": "/static/media/bus_from_daejeon_pic.f8dc9e540f88ec770041.png",
-    "static/media/greetings_bg.jpeg": "/static/media/greetings_bg.cd7be07176d8ad35ae0d.jpeg",
-    "static/media/sg_instagram.jpg": "/static/media/sg_instagram.3b0bee0694696c2c976b.jpg",
-    "static/media/bus_from_daejeon_map.png": "/static/media/bus_from_daejeon_map.e1f2b0cf83a7d1cf2bd0.png",
-    "static/media/jy_instagram.jpg": "/static/media/jy_instagram.9d353b371525e03ff227.jpg",
-    "static/media/date_bg.jpeg": "/static/media/date_bg.1e88ed5fa96b8f8ef8a2.jpeg",
-    "static/media/jy.jpeg": "/static/media/jy.915a675040bb0d787c58.jpeg",
-    "static/media/sg.jpeg": "/static/media/sg.522d218f1a93afdd1018.jpeg",
-    "static/media/map_simple.png": "/static/media/map_simple.cb2c74b4766b56aaf526.png",
-    "static/media/jy_mother.jpg": "/static/media/jy_mother.9b978d694edf13395888.jpg",
-    "static/media/contact_bg.jpeg": "/static/media/contact_bg.691f7054787413a13cfb.jpeg",
-    "static/media/jy_father.jpg": "/static/media/jy_father.e3267aeb14cd3ce657c3.jpg",
-    "static/media/swipe_hand_icon.svg": "/static/media/swipe_hand_icon.d3092a6f4070cdbfa4fd57012c69c2cc.svg",
-    "static/media/swipe_up_icon.svg": "/static/media/swipe_up_icon.f1d4441f8504329a3520dd5376c8926a.svg",
-    "static/media/arrow_next.svg": "/static/media/arrow_next.457e318890220fbb054c13fb248f5395.svg",
-    "static/media/arrow_prev.svg": "/static/media/arrow_prev.9379bd507ec24aa59a7518662e901ad9.svg",
+    "main.css": "/static/css/main.a6c0c33c.css",
+    "main.js": "/static/js/main.ba8a3401.js",
+    "static/js/988.559c1819.chunk.js": "/static/js/988.559c1819.chunk.js",
     "index.html": "/index.html",
-    "static/media/close_x.svg": "/static/media/close_x.5c0b2070aadddf8f08b680cd37013c9e.svg",
-    "main.99d964a3.css.map": "/static/css/main.99d964a3.css.map",
-    "main.ab78cadb.js.map": "/static/js/main.ab78cadb.js.map",
-    "787.0c9ea871.chunk.js.map": "/static/js/787.0c9ea871.chunk.js.map"
+    "main.a6c0c33c.css.map": "/static/css/main.a6c0c33c.css.map",
+    "main.ba8a3401.js.map": "/static/js/main.ba8a3401.js.map",
+    "988.559c1819.chunk.js.map": "/static/js/988.559c1819.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99d964a3.css",
-    "static/js/main.ab78cadb.js"
+    "static/css/main.a6c0c33c.css",
+    "static/js/main.ba8a3401.js"
   ]
 }
